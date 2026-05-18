@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>數學練習中心</title>
+<meta name="description" content="國中數學練習卷 — 比例、速率、應用題，含 SAT 英文速率專題">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --card: #1e293b;
+    --text: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --border: #334155;
+    --radius: 20px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans TC', 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    position: relative;
+    text-align: center;
+    padding: 72px 24px 80px;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(99,102,241,.25) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(6,182,212,.15) 0%, transparent 50%),
+      radial-gradient(ellipse 50% 40% at 20% 30%, rgba(168,85,247,.12) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .hero-icon {
+    font-size: 3.5rem;
+    margin-bottom: 12px;
+    display: block;
+    animation: float 3s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .hero h1 {
+    font-size: 2.6rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    background: linear-gradient(135deg, #818cf8, #38bdf8, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+  }
+  .hero p {
+    margin-top: 12px;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    position: relative;
+  }
+
+  /* ── Container ── */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* ── Section Labels ── */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 40px 0 20px;
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── Cards Grid ── */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 28px 24px;
+    text-decoration: none;
+    color: var(--text);
+    transition: transform .25s, box-shadow .25s, border-color .25s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    border-radius: var(--radius) var(--radius) 0 0;
+    transition: height .3s;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,.4);
+  }
+  .card:hover::before { height: 6px; }
+
+  /* Color Themes */
+  .card.indigo::before  { background: linear-gradient(90deg, #6366f1, #818cf8); }
+  .card.indigo:hover    { border-color: #6366f1; }
+
+  .card.purple::before  { background: linear-gradient(90deg, #7c3aed, #a78bfa); }
+  .card.purple:hover    { border-color: #7c3aed; }
+
+  .card.cyan::before    { background: linear-gradient(90deg, #0891b2, #22d3ee); }
+  .card.cyan:hover      { border-color: #0891b2; }
+
+  .card.red::before     { background: linear-gradient(90deg, #dc2626, #f87171); }
+  .card.red:hover       { border-color: #dc2626; }
+
+  .card.blue::before    { background: linear-gradient(90deg, #2563eb, #60a5fa); }
+  .card.blue:hover      { border-color: #2563eb; }
+
+  .card-icon {
+    font-size: 2rem;
+    margin-bottom: 14px;
+  }
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .card-desc {
+    font-size: .88rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    flex: 1;
+  }
+
+  .card-meta {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+  .tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 8px;
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .5px;
+  }
+  .tag.count   { background: rgba(99,102,241,.15); color: #a5b4fc; }
+  .tag.lang-zh { background: rgba(251,191,36,.12); color: #fbbf24; }
+  .tag.lang-en { background: rgba(16,185,129,.12); color: #6ee7b7; }
+  .tag.level   { background: rgba(244,63,94,.12); color: #fb7185; }
+
+  .card-arrow {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .9rem;
+    color: var(--text-secondary);
+    transition: all .25s;
+  }
+  .card:hover .card-arrow {
+    background: rgba(255,255,255,.12);
+    color: #fff;
+    transform: translateX(3px);
+  }
+
+  /* ── Footer ── */
+  .footer {
+    text-align: center;
+    padding: 32px 20px;
+    color: var(--text-secondary);
+    font-size: .8rem;
+    border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.8rem; }
+    .cards { grid-template-columns: 1fr; }
+    .card { padding: 24px 20px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <span class="hero-icon">📐</span>
+  <h1>數學練習中心</h1>
+  <p>比例 · 速率 · 應用題 — 線上互動練習</p>
+</div>
+
+<div class="container">
+
+  <div class="section-label">📝 中文練習卷</div>
+  <div class="cards">
+
+    <a href="practice.html" class="card indigo">
+      <div class="card-icon">📄</div>
+      <div class="card-title">原卷還原練習</div>
+      <div class="card-desc">原始考卷 9 題完整還原，涵蓋比值計算、工人問題、棋子合併、生產線、折扣、追趕、收入表達式等經典題型。</div>
+      <div class="card-meta">
+        <span class="tag count">9 題</span>
+        <span class="tag lang-zh">中文</span>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="practice1.html" class="card purple">
+      <div class="card-icon">✏️</div>
+      <div class="card-title">練習卷（一）</div>
+      <div class="card-desc">比例方程式、工作效率合作、連續打折、錢數分配、相遇問題、注水問題、獎金分配。</div>
+      <div class="card-meta">
+        <span class="tag count">9 題</span>
+        <span class="tag lang-zh">中文</span>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="practice2.html" class="card cyan">
+      <div class="card-icon">🧮</div>
+      <div class="card-title">練習卷（二）</div>
+      <div class="card-desc">連比運算、合作後獨做、果汁濃度、年齡比例、火車過橋、促銷折扣階梯。</div>
+      <div class="card-meta">
+        <span class="tag count">9 題</span>
+        <span class="tag lang-zh">中文</span>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="practice3.html" class="card red">
+      <div class="card-icon">🏃</div>
+      <div class="card-title">練習卷（三）</div>
+      <div class="card-desc">追趕問題、成本利潤、效率分配、平均速率、男女比例、糖水濃度變化。</div>
+      <div class="card-meta">
+        <span class="tag count">9 題</span>
+        <span class="tag lang-zh">中文</span>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+  </div>
+
+  <div class="section-label">🌍 English — SAT Prep</div>
+  <div class="cards">
+
+    <a href="speed_practice_en.html" class="card blue">
+      <div class="card-icon">🚀</div>
+      <div class="card-title">Rate, Speed &amp; Distance</div>
+      <div class="card-desc">SAT-level practice focused on <strong>d = r × t</strong>. Covers average speed traps, chase problems, tailwind/headwind, and round-trip calculations.</div>
+      <div class="card-meta">
+        <span class="tag count">10 Questions</span>
+        <span class="tag lang-en">English</span>
+        <span class="tag level">SAT Level</span>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+  </div>
+
+</div>
+
+<footer class="footer">
+  Built with ❤️ for math practice &nbsp;·&nbsp; 2026
+</footer>
+
+</body>
+</html>
