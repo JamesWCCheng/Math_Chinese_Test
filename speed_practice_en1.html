@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAT Math — Speed &amp; Rate Set 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f172a;--card:#1e293b;--primary:#3b82f6;--primary-light:#60a5fa;--accent:#f59e0b;--text:#f1f5f9;--text-light:#94a3b8;--border:#334155;--success:#10b981;--radius:16px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;min-height:100vh}
+.header{background:linear-gradient(135deg,#1e3a5f,var(--primary));color:#fff;text-align:center;padding:48px 20px 36px;position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(59,130,246,.15) 0%,transparent 60%);animation:pulse 6s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.header::after{content:'';position:absolute;bottom:-30px;left:0;right:0;height:60px;background:var(--bg);border-radius:50% 50% 0 0}
+.header h1{font-size:2rem;font-weight:700;letter-spacing:1px;position:relative;z-index:1}
+.header p{margin-top:8px;font-size:1rem;opacity:.85;position:relative;z-index:1}
+.header .formula-banner{margin-top:16px;padding:10px 24px;background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border-radius:12px;display:inline-block;font-size:1.1rem;font-weight:600;letter-spacing:2px;border:1px solid rgba(255,255,255,.2);position:relative;z-index:1}
+.formula-banner span{color:var(--accent)}
+.container{max-width:820px;margin:-10px auto 60px;padding:0 20px;position:relative;z-index:1}
+.tip-card{background:linear-gradient(135deg,#1e3a5f,#1e293b);border:1px solid var(--border);border-radius:var(--radius);padding:20px 28px;margin-bottom:28px;font-size:.95rem;color:var(--text-light);line-height:1.9}
+.tip-card h3{color:var(--accent);margin-bottom:8px;font-size:1rem}
+.tip-card code{background:rgba(59,130,246,.2);padding:2px 8px;border-radius:6px;color:var(--primary-light);font-weight:600;font-size:.95rem}
+.question-card{background:var(--card);border-radius:var(--radius);padding:28px 32px;margin-bottom:24px;box-shadow:0 2px 16px rgba(0,0,0,.3);border-left:5px solid var(--primary);transition:transform .2s,box-shadow .2s;page-break-inside:avoid}
+.question-card:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(59,130,246,.15)}
+.q-number{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;border-radius:50%;font-weight:700;font-size:.95rem;margin-bottom:12px}
+.q-type{display:inline-block;margin-left:10px;padding:2px 12px;border-radius:20px;font-size:.78rem;font-weight:500;vertical-align:middle}
+.q-type.mc{background:rgba(59,130,246,.2);color:var(--primary-light)}
+.q-type.open{background:rgba(16,185,129,.2);color:#6ee7b7}
+.q-text{font-size:1.05rem;margin-bottom:16px;line-height:2;color:var(--text)}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;margin-bottom:12px}
+.options label{display:flex;align-items:center;gap:8px;padding:10px 16px;border:2px solid var(--border);border-radius:10px;cursor:pointer;transition:all .2s;font-size:1rem;color:var(--text)}
+.options label:hover{border-color:var(--primary-light);background:rgba(59,130,246,.08)}
+.options input[type="radio"]{accent-color:var(--primary);width:18px;height:18px}
+.options input[type="radio"]:checked+span{font-weight:600;color:var(--primary-light)}
+.answer-area{margin-top:12px}.answer-area label{font-size:.9rem;color:var(--text-light);font-weight:500}
+.answer-input{display:block;width:100%;margin-top:6px;padding:12px 16px;border:2px solid var(--border);border-radius:10px;font-size:1rem;font-family:inherit;transition:border-color .2s;outline:none;background:#0f172a;color:var(--text)}
+.answer-input:focus{border-color:var(--primary)}
+.score-badge{display:inline-block;background:var(--accent);color:#000;padding:2px 10px;border-radius:12px;font-size:.78rem;font-weight:600;margin-left:8px;vertical-align:middle}
+.btn-row{text-align:center;margin:36px 0 20px}
+.btn{display:inline-block;padding:14px 48px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;border:none;border-radius:12px;font-size:1.1rem;font-weight:600;cursor:pointer;transition:transform .15s,box-shadow .15s;font-family:inherit}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(59,130,246,.4)}.btn:active{transform:scale(.97)}
+.result-banner{display:none;text-align:center;padding:24px;border-radius:var(--radius);margin-bottom:24px;font-size:1.2rem;font-weight:700}
+.result-banner.show{display:block;animation:fadeIn .4s}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+.answer-reveal{margin-top:10px;padding:12px 16px;background:rgba(15,23,42,.6);border:1px solid var(--border);border-radius:8px;font-size:.92rem;color:var(--text-light);display:none}
+.answer-reveal.show{display:block;animation:fadeIn .3s}.answer-reveal strong{color:var(--primary-light)}
+@media print{.header{padding:20px;background:#333!important}.header::after,.header::before{display:none}.btn-row,.result-banner,.answer-reveal,.tip-card{display:none!important}.question-card{box-shadow:none;border:1px solid #ccc;break-inside:avoid;background:#fff;color:#000}body{background:#fff;color:#000}.q-text{color:#000}.options label{color:#000;border-color:#ccc}}
+@media(max-width:600px){.options{grid-template-columns:1fr}.question-card{padding:20px}.header h1{font-size:1.5rem}}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>🚀 SAT Math: Speed &amp; Rate — Set 2</h1>
+  <p>10 More Questions to Master d = r × t</p>
+  <div class="formula-banner"><span>Distance</span> = <span>Rate</span> × <span>Time</span></div>
+</div>
+<div class="container">
+<div class="tip-card"><h3>💡 Remember</h3>
+<code>Average Speed = Total Distance ÷ Total Time</code> — never average two speeds directly!</div>
+
+<div class="question-card"><span class="q-number">1</span><span class="q-type mc">Multiple Choice</span>
+<div class="q-text">A jogger runs 5 miles in 40 minutes. What is her average speed in miles per hour?</div>
+<div class="options">
+<label><input type="radio" name="q1" value="A"><span>(A) 6.5</span></label>
+<label><input type="radio" name="q1" value="B"><span>(B) 7.0</span></label>
+<label><input type="radio" name="q1" value="C"><span>(C) 7.5</span></label>
+<label><input type="radio" name="q1" value="D"><span>(D) 8.0</span></label></div>
+<div class="answer-reveal" id="r1"><strong>Answer: (C) 7.5 mph</strong><br>40 min = 2/3 hour. Speed = 5 ÷ (2/3) = 5 × 3/2 = <strong>7.5 mph</strong>.</div></div>
+
+<div class="question-card"><span class="q-number">2</span><span class="q-type mc">Multiple Choice</span>
+<div class="q-text">A bus travels at 45 mph for 2 hours, then at 60 mph for 1.5 hours. What is the total distance traveled?</div>
+<div class="options">
+<label><input type="radio" name="q2" value="A"><span>(A) 150 miles</span></label>
+<label><input type="radio" name="q2" value="B"><span>(B) 165 miles</span></label>
+<label><input type="radio" name="q2" value="C"><span>(C) 180 miles</span></label>
+<label><input type="radio" name="q2" value="D"><span>(D) 195 miles</span></label></div>
+<div class="answer-reveal" id="r2"><strong>Answer: (C) 180 miles</strong><br>45×2 + 60×1.5 = 90 + 90 = <strong>180 miles</strong>.</div></div>
+
+<div class="question-card"><span class="q-number">3</span><span class="q-type mc">Multiple Choice</span>
+<div class="q-text">If it takes 3 hours to drive from Town A to Town B at 60 mph, how long would it take at 45 mph?</div>
+<div class="options">
+<label><input type="radio" name="q3" value="A"><span>(A) 3.5 hours</span></label>
+<label><input type="radio" name="q3" value="B"><span>(B) 4 hours</span></label>
+<label><input type="radio" name="q3" value="C"><span>(C) 4.5 hours</span></label>
+<label><input type="radio" name="q3" value="D"><span>(D) 5 hours</span></label></div>
+<div class="answer-reveal" id="r3"><strong>Answer: (B) 4 hours</strong><br>Distance = 60 × 3 = 180 miles. At 45 mph: 180 ÷ 45 = <strong>4 hours</strong>.</div></div>
+
+<div class="question-card"><span class="q-number">4</span><span class="q-type mc">Multiple Choice</span>
+<div class="q-text">A boat travels 24 miles upstream at 8 mph and returns downstream at 12 mph. What is the average speed for the round trip?</div>
+<div class="options">
+<label><input type="radio" name="q4" value="A"><span>(A) 9.0 mph</span></label>
+<label><input type="radio" name="q4" value="B"><span>(B) 9.6 mph</span></label>
+<label><input type="radio" name="q4" value="C"><span>(C) 10.0 mph</span></label>
+<label><input type="radio" name="q4" value="D"><span>(D) 10.4 mph</span></label></div>
+<div class="answer-reveal" id="r4"><strong>Answer: (B) 9.6 mph</strong><br>Upstream: 24/8 = 3 hrs. Downstream: 24/12 = 2 hrs. Total: 48 mi in 5 hrs = <strong>9.6 mph</strong>.<br>⚠️ NOT (8+12)/2 = 10!</div></div>
+
+<div class="question-card"><span class="q-number">5</span><span class="q-type mc">Multiple Choice</span>
+<div class="q-text">Two runners start at the same point on a circular track. Runner A completes a lap in 6 minutes, Runner B in 8 minutes. After how many minutes will they first meet again at the starting point?</div>
+<div class="options">
+<label><input type="radio" name="q5" value="A"><span>(A) 14</span></label>
+<label><input type="radio" name="q5" value="B"><span>(B) 18</span></label>
+<label><input type="radio" name="q5" value="C"><span>(C) 24</span></label>
+<label><input type="radio" name="q5" value="D"><span>(D) 48</span></label></div>
+<div class="answer-reveal" id="r5"><strong>Answer: (C) 24 minutes</strong><br>LCM(6, 8) = <strong>24</strong>. Runner A completes 4 laps, Runner B completes 3 laps.</div></div>
+
+<div class="question-card"><span class="q-number">6</span><span class="q-type mc">Multiple Choice</span>
+<div class="q-text">A person drives 150 miles. The first 90 miles are on the highway at 45 mph, and the remaining distance is on local roads at 30 mph. What is the total travel time?</div>
+<div class="options">
+<label><input type="radio" name="q6" value="A"><span>(A) 3 hours</span></label>
+<label><input type="radio" name="q6" value="B"><span>(B) 3.5 hours</span></label>
+<label><input type="radio" name="q6" value="C"><span>(C) 4 hours</span></label>
+<label><input type="radio" name="q6" value="D"><span>(D) 4.5 hours</span></label></div>
+<div class="answer-reveal" id="r6"><strong>Answer: (C) 4 hours</strong><br>Highway: 90/45 = 2 hrs. Local: 60/30 = 2 hrs. Total = <strong>4 hours</strong>.</div></div>
+
+<div class="question-card"><span class="q-number">7</span><span class="q-type mc">Multiple Choice</span>
+<div class="q-text">A pipe fills a tank in 6 hours. A second pipe fills it in 4 hours. If both pipes are open, how long does it take to fill the tank?</div>
+<div class="options">
+<label><input type="radio" name="q7" value="A"><span>(A) 2.0 hours</span></label>
+<label><input type="radio" name="q7" value="B"><span>(B) 2.4 hours</span></label>
+<label><input type="radio" name="q7" value="C"><span>(C) 2.5 hours</span></label>
+<label><input type="radio" name="q7" value="D"><span>(D) 3.0 hours</span></label></div>
+<div class="answer-reveal" id="r7"><strong>Answer: (B) 2.4 hours</strong><br>Combined rate = 1/6 + 1/4 = 5/12 per hour. Time = 12/5 = <strong>2.4 hours</strong>.</div></div>
+
+<div class="question-card"><span class="q-number">8</span><span class="q-type mc">Multiple Choice</span>
+<div class="q-text">A train 150 meters long passes a platform 250 meters long in 20 seconds. What is the speed of the train in meters per second?</div>
+<div class="options">
+<label><input type="radio" name="q8" value="A"><span>(A) 15</span></label>
+<label><input type="radio" name="q8" value="B"><span>(B) 17.5</span></label>
+<label><input type="radio" name="q8" value="C"><span>(C) 20</span></label>
+<label><input type="radio" name="q8" value="D"><span>(D) 25</span></label></div>
+<div class="answer-reveal" id="r8"><strong>Answer: (C) 20 m/s</strong><br>Total distance = 150 + 250 = 400 m. Speed = 400 ÷ 20 = <strong>20 m/s</strong>.</div></div>
+
+<div class="question-card"><span class="q-number">9</span><span class="q-type open">Free Response</span><span class="score-badge">SAT Grid-In</span>
+<div class="q-text">Alex can mow a lawn in 3 hours. Ben can mow the same lawn in 5 hours. If they work together for 1 hour, what fraction of the lawn is left unmowed?</div>
+<div class="answer-area"><label for="a9">Your answer:</label><input class="answer-input" id="a9" type="text" placeholder="Enter as a fraction"></div>
+<div class="answer-reveal" id="r9"><strong>Answer: 7/15</strong><br>Combined rate = 1/3 + 1/5 = 8/15 per hour. After 1 hour: 8/15 done. Left = <strong>7/15</strong>.</div></div>
+
+<div class="question-card"><span class="q-number">10</span><span class="q-type mc">Multiple Choice</span>
+<div class="q-text">A car gets 30 miles per gallon. If gas costs $4.00 per gallon, how much does it cost in fuel to drive 360 miles?</div>
+<div class="options">
+<label><input type="radio" name="q10" value="A"><span>(A) $42</span></label>
+<label><input type="radio" name="q10" value="B"><span>(B) $45</span></label>
+<label><input type="radio" name="q10" value="C"><span>(C) $48</span></label>
+<label><input type="radio" name="q10" value="D"><span>(D) $52</span></label></div>
+<div class="answer-reveal" id="r10"><strong>Answer: (C) $48</strong><br>Gallons needed = 360 ÷ 30 = 12. Cost = 12 × $4 = <strong>$48</strong>.</div></div>
+
+<div class="btn-row">
+<button class="btn" onclick="checkAnswers()">📝 Check Answers</button>
+<button class="btn" style="margin-left:12px;background:linear-gradient(135deg,#10b981,#059669)" onclick="resetAll()">🔄 Start Over</button></div>
+<div class="result-banner" id="resultBanner"></div>
+</div>
+<script>
+const answers={q1:'C',q2:'C',q3:'B',q4:'B',q5:'C',q6:'C',q7:'B',q8:'C',q10:'C'};
+function checkAnswers(){let c=0;for(let i=1;i<=10;i++){const el=document.getElementById('r'+i);if(el)el.classList.add('show');}for(const[q,a]of Object.entries(answers)){const s=document.querySelector(`input[name="${q}"]:checked`);if(s&&s.value===a){c++;s.closest('label').style.background='rgba(16,185,129,.15)';s.closest('label').style.borderColor='#10b981';}else if(s){s.closest('label').style.background='rgba(239,68,68,.15)';s.closest('label').style.borderColor='#ef4444';}}const b=document.getElementById('resultBanner');b.className='result-banner show';b.style.cssText='background:#1e293b;border:2px solid #334155;color:#f1f5f9';b.innerHTML=`✅ MC: ${c}/${Object.keys(answers).length} correct<br><small style="font-weight:400;color:#94a3b8">Check free-response solutions below.</small>`;}
+function resetAll(){document.querySelectorAll('input[type="radio"]').forEach(r=>r.checked=false);document.querySelectorAll('.answer-input').forEach(i=>i.value='');document.querySelectorAll('.answer-reveal').forEach(el=>el.classList.remove('show'));document.querySelectorAll('.options label').forEach(l=>{l.style.background='';l.style.borderColor='';});document.getElementById('resultBanner').classList.remove('show');}
+</script>
+</body></html>

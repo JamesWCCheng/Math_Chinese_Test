@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>數學練習中心</title>
-<meta name="description" content="國中數學練習卷 — 比例、速率、應用題，含 SAT 英文速率專題">
+<meta name="description" content="國中數學練習卷與 SAT 英文數學專題 — 比例、速率、方程式、斜率、正反比">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -16,9 +16,7 @@
     --border: #334155;
     --radius: 20px;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   body {
     font-family: 'Noto Sans TC', 'Inter', sans-serif;
     background: var(--bg);
@@ -70,6 +68,23 @@
     color: var(--text-secondary);
     position: relative;
   }
+  .hero .stat-row {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 24px;
+    position: relative;
+  }
+  .stat { text-align: center; }
+  .stat .num {
+    font-size: 2rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #f59e0b, #f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .stat .lbl { font-size: .8rem; color: var(--text-secondary); }
 
   /* ── Container ── */
   .container {
@@ -83,7 +98,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    margin: 40px 0 20px;
+    margin: 48px 0 20px;
     font-size: .85rem;
     font-weight: 600;
     color: var(--text-secondary);
@@ -134,42 +149,23 @@
   /* Color Themes */
   .card.indigo::before  { background: linear-gradient(90deg, #6366f1, #818cf8); }
   .card.indigo:hover    { border-color: #6366f1; }
-
   .card.purple::before  { background: linear-gradient(90deg, #7c3aed, #a78bfa); }
   .card.purple:hover    { border-color: #7c3aed; }
-
   .card.cyan::before    { background: linear-gradient(90deg, #0891b2, #22d3ee); }
   .card.cyan:hover      { border-color: #0891b2; }
-
   .card.red::before     { background: linear-gradient(90deg, #dc2626, #f87171); }
   .card.red:hover       { border-color: #dc2626; }
-
   .card.blue::before    { background: linear-gradient(90deg, #2563eb, #60a5fa); }
   .card.blue:hover      { border-color: #2563eb; }
+  .card.emerald::before { background: linear-gradient(90deg, #10b981, #34d399); }
+  .card.emerald:hover   { border-color: #10b981; }
+  .card.violet::before  { background: linear-gradient(90deg, #a855f7, #c084fc); }
+  .card.violet:hover    { border-color: #a855f7; }
 
-  .card-icon {
-    font-size: 2rem;
-    margin-bottom: 14px;
-  }
-  .card-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-    line-height: 1.4;
-  }
-  .card-desc {
-    font-size: .88rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    flex: 1;
-  }
-
-  .card-meta {
-    display: flex;
-    gap: 8px;
-    margin-top: 16px;
-    flex-wrap: wrap;
-  }
+  .card-icon { font-size: 2rem; margin-bottom: 14px; }
+  .card-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
+  .card-desc { font-size: .85rem; color: var(--text-secondary); line-height: 1.7; flex: 1; }
+  .card-meta { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
   .tag {
     display: inline-block;
     padding: 3px 10px;
@@ -185,17 +181,12 @@
 
   .card-arrow {
     position: absolute;
-    bottom: 24px;
-    right: 24px;
-    width: 32px;
-    height: 32px;
+    bottom: 24px; right: 24px;
+    width: 32px; height: 32px;
     border-radius: 50%;
     background: rgba(255,255,255,.05);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: .9rem;
-    color: var(--text-secondary);
+    display: flex; align-items: center; justify-content: center;
+    font-size: .9rem; color: var(--text-secondary);
     transition: all .25s;
   }
   .card:hover .card-arrow {
@@ -217,6 +208,8 @@
     .hero h1 { font-size: 1.8rem; }
     .cards { grid-template-columns: 1fr; }
     .card { padding: 24px 20px 20px; }
+    .hero .stat-row { gap: 16px; }
+    .stat .num { font-size: 1.5rem; }
   }
 </style>
 </head>
@@ -225,75 +218,132 @@
 <div class="hero">
   <span class="hero-icon">📐</span>
   <h1>數學練習中心</h1>
-  <p>比例 · 速率 · 應用題 — 線上互動練習</p>
+  <p>比例 · 速率 · 方程式 · 斜率 · 正反比 — 線上互動練習</p>
+  <div class="stat-row">
+    <div class="stat"><div class="num">14</div><div class="lbl">份練習卷</div></div>
+    <div class="stat"><div class="num">126</div><div class="lbl">題</div></div>
+    <div class="stat"><div class="num">5</div><div class="lbl">大主題</div></div>
+  </div>
 </div>
 
 <div class="container">
 
-  <div class="section-label">📝 中文練習卷</div>
+  <!-- ═══ 中文卷 ═══ -->
+  <div class="section-label">📝 中文練習卷 — 比例與應用</div>
   <div class="cards">
-
     <a href="practice.html" class="card indigo">
       <div class="card-icon">📄</div>
       <div class="card-title">原卷還原練習</div>
-      <div class="card-desc">原始考卷 9 題完整還原，涵蓋比值計算、工人問題、棋子合併、生產線、折扣、追趕、收入表達式等經典題型。</div>
-      <div class="card-meta">
-        <span class="tag count">9 題</span>
-        <span class="tag lang-zh">中文</span>
-      </div>
+      <div class="card-desc">原始考卷 9 題完整還原：比值、工人問題、棋子合併、折扣、追趕等經典題型。</div>
+      <div class="card-meta"><span class="tag count">9 題</span><span class="tag lang-zh">中文</span></div>
       <div class="card-arrow">→</div>
     </a>
-
     <a href="practice1.html" class="card purple">
       <div class="card-icon">✏️</div>
       <div class="card-title">練習卷（一）</div>
-      <div class="card-desc">比例方程式、工作效率合作、連續打折、錢數分配、相遇問題、注水問題、獎金分配。</div>
-      <div class="card-meta">
-        <span class="tag count">9 題</span>
-        <span class="tag lang-zh">中文</span>
-      </div>
+      <div class="card-desc">比例方程式、工作效率合作、連續打折、相遇問題、注水問題、獎金分配。</div>
+      <div class="card-meta"><span class="tag count">9 題</span><span class="tag lang-zh">中文</span></div>
       <div class="card-arrow">→</div>
     </a>
-
     <a href="practice2.html" class="card cyan">
       <div class="card-icon">🧮</div>
       <div class="card-title">練習卷（二）</div>
-      <div class="card-desc">連比運算、合作後獨做、果汁濃度、年齡比例、火車過橋、促銷折扣階梯。</div>
-      <div class="card-meta">
-        <span class="tag count">9 題</span>
-        <span class="tag lang-zh">中文</span>
-      </div>
+      <div class="card-desc">連比運算、合作後獨做、果汁濃度、年齡比例、火車過橋、促銷折扣。</div>
+      <div class="card-meta"><span class="tag count">9 題</span><span class="tag lang-zh">中文</span></div>
       <div class="card-arrow">→</div>
     </a>
-
     <a href="practice3.html" class="card red">
       <div class="card-icon">🏃</div>
       <div class="card-title">練習卷（三）</div>
-      <div class="card-desc">追趕問題、成本利潤、效率分配、平均速率、男女比例、糖水濃度變化。</div>
-      <div class="card-meta">
-        <span class="tag count">9 題</span>
-        <span class="tag lang-zh">中文</span>
-      </div>
+      <div class="card-desc">追趕問題、成本利潤、效率分配、平均速率、糖水濃度變化。</div>
+      <div class="card-meta"><span class="tag count">9 題</span><span class="tag lang-zh">中文</span></div>
       <div class="card-arrow">→</div>
     </a>
-
   </div>
 
-  <div class="section-label">🌍 English — SAT Prep</div>
+  <!-- ═══ Speed & Rate ═══ -->
+  <div class="section-label">🚀 SAT — Rate, Speed &amp; Distance</div>
   <div class="cards">
-
     <a href="speed_practice_en.html" class="card blue">
-      <div class="card-icon">🚀</div>
-      <div class="card-title">Rate, Speed &amp; Distance</div>
-      <div class="card-desc">SAT-level practice focused on <strong>d = r × t</strong>. Covers average speed traps, chase problems, tailwind/headwind, and round-trip calculations.</div>
-      <div class="card-meta">
-        <span class="tag count">10 Questions</span>
-        <span class="tag lang-en">English</span>
-        <span class="tag level">SAT Level</span>
-      </div>
+      <div class="card-icon">🚗</div>
+      <div class="card-title">Speed &amp; Rate — Set 1</div>
+      <div class="card-desc">Foundational d = r × t, average speed traps, chase problems, tailwind/headwind, round-trip.</div>
+      <div class="card-meta"><span class="tag count">10 Qs</span><span class="tag lang-en">English</span><span class="tag level">SAT</span></div>
       <div class="card-arrow">→</div>
     </a>
+    <a href="speed_practice_en1.html" class="card blue">
+      <div class="card-icon">🚌</div>
+      <div class="card-title">Speed &amp; Rate — Set 2</div>
+      <div class="card-desc">Upstream/downstream, circular tracks, pipe filling, fuel cost calculations.</div>
+      <div class="card-meta"><span class="tag count">10 Qs</span><span class="tag lang-en">English</span><span class="tag level">SAT</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+    <a href="speed_practice_en2.html" class="card blue">
+      <div class="card-icon">✈️</div>
+      <div class="card-title">Speed &amp; Rate — Set 3</div>
+      <div class="card-desc">Headwind/tailwind, production rate, algebraic speed equations, unit conversion.</div>
+      <div class="card-meta"><span class="tag count">10 Qs</span><span class="tag lang-en">English</span><span class="tag level">SAT</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+    <a href="speed_practice_en3.html" class="card blue">
+      <div class="card-icon">🚂</div>
+      <div class="card-title">Speed &amp; Rate — Set 4</div>
+      <div class="card-desc">Train overtaking, wind speed algebra, uphill/downhill, leaky faucet, printer rate.</div>
+      <div class="card-meta"><span class="tag count">10 Qs</span><span class="tag lang-en">English</span><span class="tag level">SAT</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+  </div>
 
+  <!-- ═══ Systems & Slope ═══ -->
+  <div class="section-label">📊 SAT — Systems of Equations &amp; Slope</div>
+  <div class="cards">
+    <a href="slope_systems1.html" class="card emerald">
+      <div class="card-icon">📈</div>
+      <div class="card-title">Systems &amp; Slope — Set 1</div>
+      <div class="card-desc">Solving 2-variable systems, slope formula, y = mx + b, parallel &amp; perpendicular lines.</div>
+      <div class="card-meta"><span class="tag count">10 Qs</span><span class="tag lang-en">English</span><span class="tag level">SAT</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+    <a href="slope_systems2.html" class="card emerald">
+      <div class="card-icon">🎫</div>
+      <div class="card-title">Systems &amp; Slope — Set 2</div>
+      <div class="card-desc">Word problems (tickets, shopping), no-solution systems, midpoint formula, savings equations.</div>
+      <div class="card-meta"><span class="tag count">10 Qs</span><span class="tag lang-en">English</span><span class="tag level">SAT</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+    <a href="slope_systems3.html" class="card emerald">
+      <div class="card-icon">🅿️</div>
+      <div class="card-title">Systems &amp; Slope — Set 3</div>
+      <div class="card-desc">Intercepts, parking lot word problems, parameter solving, point verification.</div>
+      <div class="card-meta"><span class="tag count">10 Qs</span><span class="tag lang-en">English</span><span class="tag level">SAT</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+  </div>
+
+  <!-- ═══ Proportion ═══ -->
+  <div class="section-label">⚖️ SAT — Direct &amp; Inverse Variation</div>
+  <div class="cards">
+    <a href="proportion1.html" class="card violet">
+      <div class="card-icon">🔗</div>
+      <div class="card-title">Variation — Set 1</div>
+      <div class="card-desc">Direct &amp; inverse basics, y = kx, xy = k, gas law, recipe scaling, workers problem.</div>
+      <div class="card-meta"><span class="tag count">10 Qs</span><span class="tag lang-en">English</span><span class="tag level">SAT</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+    <a href="proportion2.html" class="card violet">
+      <div class="card-icon">🗺️</div>
+      <div class="card-title">Variation — Set 2</div>
+      <div class="card-desc">Map scale, gear ratio, shadow problems, inverse square, string frequency, fabric cost.</div>
+      <div class="card-meta"><span class="tag count">10 Qs</span><span class="tag lang-en">English</span><span class="tag level">SAT</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+    <a href="proportion3.html" class="card violet">
+      <div class="card-icon">💡</div>
+      <div class="card-title">Variation — Set 3</div>
+      <div class="card-desc">Joint variation, inverse square law (light), scale models, combined variation, ratio sharing.</div>
+      <div class="card-meta"><span class="tag count">10 Qs</span><span class="tag lang-en">English</span><span class="tag level">SAT</span></div>
+      <div class="card-arrow">→</div>
+    </a>
   </div>
 
 </div>
