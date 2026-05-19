@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math Cheat Sheet — All Key Concepts</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f172a;--card:#1e293b;--text:#f1f5f9;--text2:#94a3b8;--border:#334155;--radius:16px;
+--blue:#3b82f6;--green:#10b981;--purple:#a855f7;--amber:#f59e0b;--red:#ef4444;--cyan:#06b6d4}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;min-height:100vh}
+
+/* ── Header ── */
+.header{text-align:center;padding:56px 24px 64px;position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(99,102,241,.3) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 80% 20%,rgba(6,182,212,.15) 0%,transparent 50%);pointer-events:none}
+.header h1{font-size:2.4rem;font-weight:800;background:linear-gradient(135deg,#818cf8,#38bdf8,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative}
+.header p{margin-top:8px;color:var(--text2);font-size:1.05rem;position:relative}
+.header .badge-row{display:flex;justify-content:center;gap:12px;margin-top:16px;flex-wrap:wrap;position:relative}
+.header .badge{padding:4px 14px;border-radius:20px;font-size:.75rem;font-weight:600;letter-spacing:.5px}
+.badge.b1{background:rgba(59,130,246,.15);color:#93c5fd}
+.badge.b2{background:rgba(16,185,129,.15);color:#6ee7b7}
+.badge.b3{background:rgba(168,85,247,.15);color:#d8b4fe}
+.badge.b4{background:rgba(245,158,11,.15);color:#fcd34d}
+.badge.b5{background:rgba(6,182,212,.15);color:#67e8f9}
+
+/* ── Container ── */
+.container{max-width:1000px;margin:0 auto;padding:0 24px 80px}
+
+/* ── Topic Block ── */
+.topic{margin-bottom:40px;page-break-inside:avoid}
+.topic-header{display:flex;align-items:center;gap:14px;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--border)}
+.topic-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+.topic-title{font-size:1.3rem;font-weight:700;letter-spacing:.5px}
+.topic-sub{font-size:.82rem;color:var(--text2);font-weight:500}
+
+/* ── Formula Cards ── */
+.formulas{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:16px}
+.formula-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;transition:transform .2s,box-shadow .2s}
+.formula-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.formula-card h4{font-size:.85rem;color:var(--text2);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px;font-weight:600}
+.formula-card .eq{font-size:1.3rem;font-weight:700;margin-bottom:8px;letter-spacing:1px}
+.formula-card .note{font-size:.82rem;color:var(--text2);line-height:1.7}
+
+/* ── Tips / Warnings ── */
+.tip-box{background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(16,185,129,.05));border:1px solid rgba(59,130,246,.2);border-radius:14px;padding:18px 22px;margin-bottom:16px}
+.tip-box h4{color:var(--amber);font-size:.9rem;margin-bottom:8px}
+.tip-box ul{padding-left:20px;font-size:.88rem;color:var(--text2);line-height:2}
+.tip-box li strong{color:var(--text)}
+
+.warn-box{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.2);border-radius:14px;padding:18px 22px;margin-bottom:16px}
+.warn-box h4{color:var(--red);font-size:.9rem;margin-bottom:8px}
+.warn-box ul{padding-left:20px;font-size:.88rem;color:var(--text2);line-height:2}
+.warn-box li strong{color:var(--text)}
+
+/* ── Quick Reference Table ── */
+.ref-table{width:100%;border-collapse:collapse;margin-bottom:16px;font-size:.88rem}
+.ref-table th{background:rgba(255,255,255,.05);padding:10px 14px;text-align:left;font-weight:600;border-bottom:2px solid var(--border);color:var(--text2);text-transform:uppercase;letter-spacing:1px;font-size:.75rem}
+.ref-table td{padding:10px 14px;border-bottom:1px solid var(--border)}
+.ref-table tr:hover td{background:rgba(255,255,255,.02)}
+
+/* ── Back Link ── */
+.back-link{display:inline-flex;align-items:center;gap:8px;color:var(--blue);text-decoration:none;font-weight:600;font-size:.95rem;margin-bottom:24px;transition:opacity .2s}
+.back-link:hover{opacity:.8}
+
+/* ── Print ── */
+@media print{
+  body{background:#fff;color:#000;font-size:11pt}
+  .header{padding:20px;background:none!important}
+  .header::before{display:none}
+  .header h1{-webkit-text-fill-color:#333;font-size:1.6rem}
+  .header p,.badge-row{display:none}
+  .back-link{display:none}
+  .topic-header{border-color:#ccc}
+  .formula-card{background:#f8f8f8;border-color:#ddd;box-shadow:none}
+  .formula-card h4{color:#666}.formula-card .eq{color:#000}.formula-card .note{color:#555}
+  .tip-box{background:#f0f7ff;border-color:#cce}.warn-box{background:#fff5f5;border-color:#fcc}
+  .tip-box h4{color:#b45309}.warn-box h4{color:#dc2626}
+  .tip-box ul,.warn-box ul{color:#333}
+  .ref-table th{background:#eee;color:#333;border-color:#ccc}
+  .ref-table td{border-color:#ddd;color:#000}
+  .topic{page-break-inside:avoid}
+  .card,.container{max-width:100%}
+}
+@media(max-width:600px){.formulas{grid-template-columns:1fr}.header h1{font-size:1.6rem}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📋 Math Cheat Sheet</h1>
+  <p>All Key Concepts — Quick Reference for SAT Prep</p>
+  <div class="badge-row">
+    <span class="badge b1">Speed &amp; Rate</span>
+    <span class="badge b2">Systems &amp; Slope</span>
+    <span class="badge b3">Proportion</span>
+    <span class="badge b4">Ratio 比例</span>
+    <span class="badge b5">Work Rate</span>
+  </div>
+</div>
+
+<div class="container">
+<a href="index.html" class="back-link">← Back to Practice Center</a>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- TOPIC 1: RATE, SPEED & DISTANCE            -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="topic">
+  <div class="topic-header">
+    <div class="topic-icon" style="background:rgba(59,130,246,.15);color:var(--blue)">🚀</div>
+    <div><div class="topic-title">Rate, Speed &amp; Distance</div><div class="topic-sub">The foundation of motion problems</div></div>
+  </div>
+
+  <div class="formulas">
+    <div class="formula-card">
+      <h4>Core Triangle</h4>
+      <div class="eq" style="color:var(--blue)">d = r × t</div>
+      <div class="note">
+        <strong>d</strong> = distance &nbsp;|&nbsp; <strong>r</strong> = rate (speed) &nbsp;|&nbsp; <strong>t</strong> = time<br>
+        Rearrange: <strong>r = d / t</strong> &nbsp;|&nbsp; <strong>t = d / r</strong>
+      </div>
+    </div>
+    <div class="formula-card">
+      <h4>Average Speed</h4>
+      <div class="eq" style="color:var(--blue)">Avg = Total Distance ÷ Total Time</div>
+      <div class="note">
+        ⚠️ NOT the arithmetic mean of two speeds!<br>
+        For equal-distance legs at speeds a, b:<br>
+        <strong>Avg = 2ab / (a + b)</strong> (harmonic mean)
+      </div>
+    </div>
+    <div class="formula-card">
+      <h4>Opposite Directions</h4>
+      <div class="eq" style="color:var(--cyan)">Gap Rate = v₁ + v₂</div>
+      <div class="note">
+        Two objects moving apart → distances add.<br>
+        Time to be D apart: <strong>t = D / (v₁ + v₂)</strong>
+      </div>
+    </div>
+    <div class="formula-card">
+      <h4>Chase / Same Direction</h4>
+      <div class="eq" style="color:var(--cyan)">Closing Rate = v_fast − v_slow</div>
+      <div class="note">
+        Faster object catches up → use speed difference.<br>
+        Time to catch up: <strong>t = gap / (v_fast − v_slow)</strong>
+      </div>
+    </div>
+    <div class="formula-card">
+      <h4>Wind / Current</h4>
+      <div class="eq" style="color:var(--amber)">With wind: v + w &nbsp;|&nbsp; Against: v − w</div>
+      <div class="note">
+        v = speed in still air/water, w = wind/current speed.<br>
+        Use d = rt for each leg separately.
+      </div>
+    </div>
+    <div class="formula-card">
+      <h4>Train Passing</h4>
+      <div class="eq" style="color:var(--amber)">d = L_train + L_object</div>
+      <div class="note">
+        Passing a platform: d = train length + platform length.<br>
+        Overtaking another train: use relative speed.
+      </div>
+    </div>
+  </div>
+
+  <div class="warn-box">
+    <h4>⚠️ Common Mistakes</h4>
+    <ul>
+      <li><strong>Averaging speeds directly</strong> — (60+40)/2 ≠ average speed. Use total dist ÷ total time.</li>
+      <li><strong>Unit mismatch</strong> — Convert minutes ↔ hours before plugging into d = rt.</li>
+      <li><strong>Forgetting train length</strong> — The train must clear the platform entirely.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- TOPIC 2: SYSTEMS OF EQUATIONS              -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="topic">
+  <div class="topic-header">
+    <div class="topic-icon" style="background:rgba(16,185,129,.15);color:var(--green)">📊</div>
+    <div><div class="topic-title">Systems of Linear Equations</div><div class="topic-sub">Two equations, two unknowns</div></div>
+  </div>
+
+  <div class="formulas">
+    <div class="formula-card">
+      <h4>Substitution Method</h4>
+      <div class="eq" style="color:var(--green)">Solve one eq for x → Substitute</div>
+      <div class="note">
+        1. Isolate one variable: x = …<br>
+        2. Plug into the other equation.<br>
+        3. Solve → back-substitute.
+      </div>
+    </div>
+    <div class="formula-card">
+      <h4>Elimination Method</h4>
+      <div class="eq" style="color:var(--green)">Add/Subtract to cancel a variable</div>
+      <div class="note">
+        Multiply equations so one variable has matching (or opposite) coefficients, then add or subtract.
+      </div>
+    </div>
+    <div class="formula-card">
+      <h4>Number of Solutions</h4>
+      <div class="eq" style="color:var(--cyan)">a₁/a₂ ≠ b₁/b₂ → One solution</div>
+      <div class="note">
+        <strong>One solution:</strong> lines intersect.<br>
+        <strong>No solution:</strong> same slope, different intercept (parallel).<br>
+        <strong>Infinite:</strong> same line (proportional equations).
+      </div>
+    </div>
+    <div class="formula-card">
+      <h4>Word Problem Setup</h4>
+      <div class="eq" style="color:var(--amber)">Define variables → Write 2 equations</div>
+      <div class="note">
+        Typical setups: total count + total value,<br>
+        e.g., <em>a + c = 200</em> and <em>12a + 8c = 2080</em>.
+      </div>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <h4>💡 Pro Tips</h4>
+    <ul>
+      <li><strong>Quick check:</strong> Always substitute your answer back into BOTH equations.</li>
+      <li><strong>SAT shortcut:</strong> Sometimes they ask for x + y or x − y directly — try adding/subtracting equations before solving individually.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- TOPIC 3: SLOPE & LINEAR EQUATIONS          -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="topic">
+  <div class="topic-header">
+    <div class="topic-icon" style="background:rgba(16,185,129,.15);color:var(--green)">📈</div>
+    <div><div class="topic-title">Slope &amp; Linear Equations</div><div class="topic-sub">Lines on the coordinate plane</div></div>
+  </div>
+
+  <div class="formulas">
+    <div class="formula-card">
+      <h4>Slope Formula</h4>
+      <div class="eq" style="color:var(--green)">m = (y₂ − y₁) / (x₂ − x₁)</div>
+      <div class="note">Rise over run. Positive = uphill, negative = downhill.</div>
+    </div>
+    <div class="formula-card">
+      <h4>Slope-Intercept Form</h4>
+      <div class="eq" style="color:var(--green)">y = mx + b</div>
+      <div class="note"><strong>m</strong> = slope, <strong>b</strong> = y-intercept (where line crosses y-axis).</div>
+    </div>
+    <div class="formula-card">
+      <h4>Standard Form</h4>
+      <div class="eq" style="color:var(--cyan)">Ax + By = C</div>
+      <div class="note">Slope = <strong>−A/B</strong>. y-int = C/B. x-int = C/A.</div>
+    </div>
+    <div class="formula-card">
+      <h4>Point-Slope Form</h4>
+      <div class="eq" style="color:var(--cyan)">y − y₁ = m(x − x₁)</div>
+      <div class="note">Use when you know slope + one point. Rearrange to y = mx + b.</div>
+    </div>
+  </div>
+
+  <table class="ref-table">
+    <tr><th>Relationship</th><th>Slope Rule</th><th>Example</th></tr>
+    <tr><td><strong>Parallel</strong> lines</td><td>Same slope: m₁ = m₂</td><td>y = 3x+1 ∥ y = 3x−5</td></tr>
+    <tr><td><strong>Perpendicular</strong> lines</td><td>Negative reciprocal: m₁ × m₂ = −1</td><td>y = 2x+1 ⊥ y = −½x+3</td></tr>
+    <tr><td><strong>Horizontal</strong> line</td><td>m = 0</td><td>y = 4</td></tr>
+    <tr><td><strong>Vertical</strong> line</td><td>m = undefined</td><td>x = 3</td></tr>
+  </table>
+
+  <table class="ref-table">
+    <tr><th>Find…</th><th>Method</th></tr>
+    <tr><td><strong>x-intercept</strong></td><td>Set y = 0, solve for x</td></tr>
+    <tr><td><strong>y-intercept</strong></td><td>Set x = 0, solve for y (or read b from y = mx+b)</td></tr>
+    <tr><td><strong>Midpoint</strong></td><td>M = ((x₁+x₂)/2, (y₁+y₂)/2)</td></tr>
+    <tr><td><strong>Distance</strong></td><td>d = √[(x₂−x₁)² + (y₂−y₁)²]</td></tr>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- TOPIC 4: DIRECT & INVERSE VARIATION        -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="topic">
+  <div class="topic-header">
+    <div class="topic-icon" style="background:rgba(168,85,247,.15);color:var(--purple)">⚖️</div>
+    <div><div class="topic-title">Direct &amp; Inverse Variation</div><div class="topic-sub">Proportional relationships</div></div>
+  </div>
+
+  <div class="formulas">
+    <div class="formula-card">
+      <h4>Direct Variation</h4>
+      <div class="eq" style="color:var(--purple)">y = kx &nbsp;(y/x = k)</div>
+      <div class="note">As x increases, y increases proportionally.<br>Graph: straight line through origin.</div>
+    </div>
+    <div class="formula-card">
+      <h4>Inverse Variation</h4>
+      <div class="eq" style="color:var(--purple)">y = k/x &nbsp;(xy = k)</div>
+      <div class="note">As x increases, y decreases.<br>Graph: hyperbola in quadrants I &amp; III (if k &gt; 0).</div>
+    </div>
+    <div class="formula-card">
+      <h4>Joint Variation</h4>
+      <div class="eq" style="color:var(--amber)">z = kxy</div>
+      <div class="note">z varies directly as both x and y.</div>
+    </div>
+    <div class="formula-card">
+      <h4>Combined Variation</h4>
+      <div class="eq" style="color:var(--amber)">z = kx / y</div>
+      <div class="note">z varies directly as x and inversely as y.</div>
+    </div>
+    <div class="formula-card">
+      <h4>Inverse Square</h4>
+      <div class="eq" style="color:var(--red)">y = k / x²</div>
+      <div class="note">Common in physics: light intensity, gravity.<br>Double the distance → ¼ the intensity.</div>
+    </div>
+    <div class="formula-card">
+      <h4>How to Solve</h4>
+      <div class="eq" style="color:var(--green)">Step 1 → find k &nbsp;|&nbsp; Step 2 → use k</div>
+      <div class="note">1. Plug in given values to find k.<br>2. Use k with new values to find the unknown.</div>
+    </div>
+  </div>
+
+  <table class="ref-table">
+    <tr><th>Type</th><th>If x doubles…</th><th>Constant</th><th>Graph Shape</th></tr>
+    <tr><td>Direct (y = kx)</td><td>y doubles</td><td>y/x</td><td>Line through origin</td></tr>
+    <tr><td>Inverse (xy = k)</td><td>y halves</td><td>x × y</td><td>Hyperbola</td></tr>
+    <tr><td>Direct square (y = kx²)</td><td>y quadruples</td><td>y/x²</td><td>Parabola</td></tr>
+    <tr><td>Inverse square (y = k/x²)</td><td>y is ¼</td><td>y × x²</td><td>Steep hyperbola</td></tr>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- TOPIC 5: RATIO & WORK RATE (中文卷重點)     -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="topic">
+  <div class="topic-header">
+    <div class="topic-icon" style="background:rgba(245,158,11,.15);color:var(--amber)">🔢</div>
+    <div><div class="topic-title">Ratio &amp; Work Rate</div><div class="topic-sub">比例 · 工作效率 · 折扣 · 濃度</div></div>
+  </div>
+
+  <div class="formulas">
+    <div class="formula-card">
+      <h4>Ratio to Value 比值</h4>
+      <div class="eq" style="color:var(--amber)">a : b → a = bk, b = bk</div>
+      <div class="note">Set a = mk, b = nk. Use conditions to find k.<br>
+      Chain ratios: match the shared term via LCM.</div>
+    </div>
+    <div class="formula-card">
+      <h4>Work Rate 工作效率</h4>
+      <div class="eq" style="color:var(--amber)">Rate = 1 / Time</div>
+      <div class="note">
+        Combined: <strong>1/t₁ + 1/t₂ = 1/T</strong><br>
+        A does job in 6h, B in 4h → together: 1/6+1/4 = 5/12 → 12/5 = 2.4h
+      </div>
+    </div>
+    <div class="formula-card">
+      <h4>Discount 折扣</h4>
+      <div class="eq" style="color:var(--cyan)">Final = Original × d₁ × d₂</div>
+      <div class="note">
+        打八折 = ×0.8, 打九折 = ×0.9<br>
+        先八折再九折 = 0.8 × 0.9 = 0.72 (七二折)
+      </div>
+    </div>
+    <div class="formula-card">
+      <h4>Concentration 濃度</h4>
+      <div class="eq" style="color:var(--cyan)">C = solute / total</div>
+      <div class="note">
+        Adding pure solute → solute changes, water stays.<br>
+        Adding water → water changes, solute stays.
+      </div>
+    </div>
+    <div class="formula-card">
+      <h4>Age Problems 年齡</h4>
+      <div class="eq" style="color:var(--green)">Now + n = Future age</div>
+      <div class="note">
+        Everyone ages the same amount.<br>
+        Set up ratio now → write ratio after n years.
+      </div>
+    </div>
+    <div class="formula-card">
+      <h4>Profit 成本利潤</h4>
+      <div class="eq" style="color:var(--green)">Profit = Selling − Cost</div>
+      <div class="note">
+        定價 = 成本 × markup<br>
+        售價 = 定價 × discount<br>
+        利潤率 = (售 − 成) / 成 × 100%
+      </div>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <h4>💡 Quick Tricks</h4>
+    <ul>
+      <li><strong>Chain ratio 連比:</strong> a:b = 2:3, b:c = 4:5 → LCM of b = 12 → a:b:c = 8:12:15</li>
+      <li><strong>Workers × Days = constant</strong> (inverse proportion for identical workers)</li>
+      <li><strong>Meeting problems 相遇:</strong> combined rate = sum of speeds; gap closes at sum rate</li>
+    </ul>
+  </div>
+</div>
+
+</div><!-- /container -->
+</body>
+</html>
