@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Practice — Day 13</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>:root{--bg:#0f172a;--card:#1e293b;--pr:#8b5cf6;--prl:#a78bfa;--txt:#f1f5f9;--tx2:#94a3b8;--brd:#334155;--r:16px}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);line-height:1.8;min-height:100vh}.hdr{background:linear-gradient(135deg,#4c1d95,var(--pr),#2563eb);color:#fff;text-align:center;padding:48px 20px 40px;position:relative;overflow:hidden}.hdr::after{content:'';position:absolute;bottom:-30px;left:0;right:0;height:60px;background:var(--bg);border-radius:50% 50% 0 0}.hdr h1{font-size:1.8rem;font-weight:700;position:relative;z-index:1}.hdr p{margin-top:6px;font-size:.95rem;opacity:.85;position:relative;z-index:1}.hdr .tags{display:flex;justify-content:center;gap:8px;margin-top:14px;flex-wrap:wrap;position:relative;z-index:1}.hdr .tag{padding:3px 12px;border-radius:20px;font-size:.72rem;font-weight:600;background:rgba(255,255,255,.15)}.cnt{max-width:820px;margin:-10px auto 60px;padding:0 20px;position:relative;z-index:1}.back{display:inline-flex;align-items:center;gap:6px;color:var(--prl);text-decoration:none;font-weight:600;font-size:.9rem;margin-bottom:20px}.back:hover{opacity:.8}.qc{background:var(--card);border-radius:var(--r);padding:24px 28px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.3);border-left:5px solid var(--pr);transition:transform .2s}.qc:hover{transform:translateY(-2px)}.qn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:linear-gradient(135deg,var(--pr),var(--prl));color:#fff;border-radius:50%;font-weight:700;font-size:.9rem;margin-bottom:10px}.qt{display:inline-block;margin-left:8px;padding:2px 10px;border-radius:20px;font-size:.72rem;font-weight:600;vertical-align:middle}.qt.mc{background:rgba(139,92,246,.2);color:var(--prl)}.qt.fr{background:rgba(16,185,129,.2);color:#6ee7b7}.qx{font-size:1rem;margin-bottom:14px;line-height:2}.ops{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;margin-bottom:10px}.ops label{display:flex;align-items:center;gap:8px;padding:9px 14px;border:2px solid var(--brd);border-radius:10px;cursor:pointer;transition:all .2s;font-size:.95rem}.ops label:hover{border-color:var(--prl);background:rgba(139,92,246,.08)}.ops input[type="radio"]{accent-color:var(--pr);width:17px;height:17px}.aa{margin-top:10px}.aa>label{font-size:.85rem;color:var(--tx2);font-weight:500}.ai{display:block;width:100%;margin-top:5px;padding:10px 14px;border:2px solid var(--brd);border-radius:10px;font-size:.95rem;font-family:inherit;outline:none;background:var(--bg);color:var(--txt)}.ai:focus{border-color:var(--pr)}.br{text-align:center;margin:32px 0 16px}.bn{display:inline-block;padding:12px 40px;background:linear-gradient(135deg,var(--pr),var(--prl));color:#fff;border:none;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;font-family:inherit;transition:transform .15s,box-shadow .15s}.bn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(139,92,246,.4)}.bn:active{transform:scale(.97)}.rb{display:none;text-align:center;padding:20px;border-radius:var(--r);margin-bottom:20px;font-size:1.1rem;font-weight:700;background:var(--card);border:2px solid var(--brd)}.rb.show{display:block;animation:fi .4s}@keyframes fi{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}.ar{margin-top:8px;padding:10px 14px;background:rgba(15,23,42,.6);border:1px solid var(--brd);border-radius:8px;font-size:.88rem;color:var(--tx2);display:none}.ar.show{display:block;animation:fi .3s}.ar strong{color:var(--prl)}.nav{display:flex;justify-content:space-between;align-items:center;margin-top:24px;padding-top:20px;border-top:1px solid var(--brd)}.nav a{color:var(--prl);text-decoration:none;font-weight:600;font-size:.9rem}.nav a:hover{opacity:.8}@media(max-width:600px){.ops{grid-template-columns:1fr}.qc{padding:18px}.hdr h1{font-size:1.4rem}}</style>
+</head>
+<body>
+<div class="hdr"><h1>📅 Day 13 — Daily Practice</h1><p>Mixed Topics · 10 Questions · Higher Difficulty</p><div class="tags"><span class="tag">Speed</span><span class="tag">Systems</span><span class="tag">Slope</span><span class="tag">Variation</span><span class="tag">Ratio</span></div></div>
+<div class="cnt">
+  <a href="daily_practice.html" class="back">← Back to Daily Practice</a>
+
+  <div class="qc" id="q1"><span class="qn">1</span><span class="qt mc">MC</span>
+    <div class="qx">Two trains leave stations 500 km apart at the same time, heading toward each other. Train A goes 80 km/h, Train B goes 120 km/h. After how many hours do they meet?</div>
+    <div class="ops"><label><input type="radio" name="q1" value="A"><span>(A) 2</span></label><label><input type="radio" name="q1" value="B"><span>(B) 2.5</span></label><label><input type="radio" name="q1" value="C"><span>(C) 3</span></label><label><input type="radio" name="q1" value="D"><span>(D) 3.5</span></label></div>
+    <div class="ar" id="r1"><strong>Answer: (B) 2.5 hours</strong><br>Combined speed = 80 + 120 = 200 km/h. Time = 500/200 = <strong>2.5 h</strong>.</div>
+  </div>
+
+  <div class="qc" id="q2"><span class="qn">2</span><span class="qt mc">MC</span>
+    <div class="qx">Store A sells 3 kg of apples for $12. Store B sells 5 kg for $18. Which store offers the better price per kg, and by how much?</div>
+    <div class="ops"><label><input type="radio" name="q2" value="A"><span>(A) Store A, by $0.20/kg</span></label><label><input type="radio" name="q2" value="B"><span>(B) Store B, by $0.40/kg</span></label><label><input type="radio" name="q2" value="C"><span>(C) Store A, by $0.40/kg</span></label><label><input type="radio" name="q2" value="D"><span>(D) Store B, by $0.60/kg</span></label></div>
+    <div class="ar" id="r2"><strong>Answer: (B) Store B, by $0.40/kg</strong><br>A: $12/3 = $4/kg. B: $18/5 = $3.60/kg.<br>B is cheaper by 4 − 3.6 = <strong>$0.40/kg</strong>.</div>
+  </div>
+
+  <div class="qc" id="q3"><span class="qn">3</span><span class="qt mc">MC</span>
+    <div class="qx">What is the equation of the line through (2, 5) and (6, 13) in the form y = mx + b?</div>
+    <div class="ops"><label><input type="radio" name="q3" value="A"><span>(A) y = 2x + 1</span></label><label><input type="radio" name="q3" value="B"><span>(B) y = 2x − 1</span></label><label><input type="radio" name="q3" value="C"><span>(C) y = 3x − 1</span></label><label><input type="radio" name="q3" value="D"><span>(D) y = 4x − 3</span></label></div>
+    <div class="ar" id="r3"><strong>Answer: (A) y = 2x + 1</strong><br>m = (13−5)/(6−2) = 8/4 = 2. b = 5 − 2(2) = 1. y = <strong>2x + 1</strong>.</div>
+  </div>
+
+  <div class="qc" id="q4"><span class="qn">4</span><span class="qt mc">MC</span>
+    <div class="qx">The illumination from a lamp varies inversely as the square of the distance. At 3 m, it is 80 lux. At what distance is it 20 lux?</div>
+    <div class="ops"><label><input type="radio" name="q4" value="A"><span>(A) 5 m</span></label><label><input type="radio" name="q4" value="B"><span>(B) 6 m</span></label><label><input type="radio" name="q4" value="C"><span>(C) 8 m</span></label><label><input type="radio" name="q4" value="D"><span>(D) 12 m</span></label></div>
+    <div class="ar" id="r4"><strong>Answer: (B) 6 m</strong><br>I = k/d². 80 = k/9 → k = 720. 20 = 720/d² → d² = 36 → d = <strong>6 m</strong>.</div>
+  </div>
+
+  <div class="qc" id="q5"><span class="qn">5</span><span class="qt mc">MC</span>
+    <div class="qx">Five test scores have a mean of 76. Adding a sixth score changes the mean to 78. What is the sixth score?</div>
+    <div class="ops"><label><input type="radio" name="q5" value="A"><span>(A) 82</span></label><label><input type="radio" name="q5" value="B"><span>(B) 86</span></label><label><input type="radio" name="q5" value="C"><span>(C) 88</span></label><label><input type="radio" name="q5" value="D"><span>(D) 90</span></label></div>
+    <div class="ar" id="r5"><strong>Answer: (C) 88</strong><br>Sum of 5 = 380. New sum of 6 = 468. Sixth score = 468 − 380 = <strong>88</strong>.</div>
+  </div>
+
+  <div class="qc" id="q6"><span class="qn">6</span><span class="qt mc">MC</span>
+    <div class="qx">A boat takes 2 hours to go 24 km upstream and 1.5 hours to return downstream. What is the boat's speed in still water?</div>
+    <div class="ops"><label><input type="radio" name="q6" value="A"><span>(A) 12 km/h</span></label><label><input type="radio" name="q6" value="B"><span>(B) 14 km/h</span></label><label><input type="radio" name="q6" value="C"><span>(C) 16 km/h</span></label><label><input type="radio" name="q6" value="D"><span>(D) 18 km/h</span></label></div>
+    <div class="ar" id="r6"><strong>Answer: (B) 14 km/h</strong><br>Up: 24/2 = 12 = v − c. Down: 24/1.5 = 16 = v + c.<br>2v = 28 → v = <strong>14 km/h</strong>.</div>
+  </div>
+
+  <div class="qc" id="q7"><span class="qn">7</span><span class="qt mc">MC</span>
+    <div class="qx">A family spends 30% of income on rent, 20% on food, 15% on transportation, and saves the rest. If they save $700/month, what is the monthly income?</div>
+    <div class="ops"><label><input type="radio" name="q7" value="A"><span>(A) $1,800</span></label><label><input type="radio" name="q7" value="B"><span>(B) $2,000</span></label><label><input type="radio" name="q7" value="C"><span>(C) $2,200</span></label><label><input type="radio" name="q7" value="D"><span>(D) $2,500</span></label></div>
+    <div class="ar" id="r7"><strong>Answer: (B) $2,000</strong><br>Savings = 100% − 30% − 20% − 15% = 35%. 0.35 × Income = 700 → Income = <strong>$2,000</strong>.</div>
+  </div>
+
+  <div class="qc" id="q8"><span class="qn">8</span><span class="qt fr">Free Response</span>
+    <div class="qx">Line L₁: y = ½x + 3 and Line L₂: y = −2x + 8. Find the coordinates of their intersection.</div>
+    <div class="aa"><label for="a8">Your answer:</label><input class="ai" id="a8" type="text" placeholder="(x, y)"></div>
+    <div class="ar" id="r8"><strong>Answer: (2, 4)</strong><br>½x + 3 = −2x + 8 → ½x + 2x = 5 → 5x/2 = 5 → x = 2. y = ½(2)+3 = <strong>4</strong>.<br>Point: <strong>(2, 4)</strong>.</div>
+  </div>
+
+  <div class="qc" id="q9"><span class="qn">9</span><span class="qt mc">MC</span>
+    <div class="qx">A model car is built at a scale of 1:24. If the model is 18 cm long, how long is the real car in meters?</div>
+    <div class="ops"><label><input type="radio" name="q9" value="A"><span>(A) 3.6 m</span></label><label><input type="radio" name="q9" value="B"><span>(B) 4.32 m</span></label><label><input type="radio" name="q9" value="C"><span>(C) 4.8 m</span></label><label><input type="radio" name="q9" value="D"><span>(D) 5.4 m</span></label></div>
+    <div class="ar" id="r9"><strong>Answer: (B) 4.32 m</strong><br>Real = 18 × 24 = 432 cm = <strong>4.32 m</strong>.</div>
+  </div>
+
+  <div class="qc" id="q10"><span class="qn">10</span><span class="qt mc">MC</span>
+    <div class="qx">Worker A makes 40 parts/hour, B makes 60 parts/hour. After A works alone for 2 hours, both work together. How many total hours from start to complete 400 parts?</div>
+    <div class="ops"><label><input type="radio" name="q10" value="A"><span>(A) 4.5 h</span></label><label><input type="radio" name="q10" value="B"><span>(B) 5.2 h</span></label><label><input type="radio" name="q10" value="C"><span>(C) 5.6 h</span></label><label><input type="radio" name="q10" value="D"><span>(D) 6.0 h</span></label></div>
+    <div class="ar" id="r10"><strong>Answer: (B) 5.2 h</strong><br>A alone 2 h: 80 parts. Remaining: 320. Together: 100/hr → 320/100 = 3.2 h.<br>Total = 2 + 3.2 = <strong>5.2 hours</strong>.</div>
+  </div>
+
+  <div class="br"><button class="bn" onclick="check()">📝 Check Answers</button><button class="bn" style="margin-left:10px;background:linear-gradient(135deg,#10b981,#059669)" onclick="reset()">🔄 Start Over</button></div>
+  <div class="rb" id="rb"></div>
+  <div class="nav"><a href="day12.html">← Day 12</a><a href="day14.html">Day 14 →</a></div>
+</div>
+<script>
+const answers={q1:'B',q2:'B',q3:'A',q4:'B',q5:'C',q6:'B',q7:'B',q9:'B',q10:'B'};
+function check(){for(let i=1;i<=10;i++){const e=document.getElementById('r'+i);if(e)e.classList.add('show');}let c=0;for(const[q,a]of Object.entries(answers)){const s=document.querySelector(`input[name="${q}"]:checked`);if(s&&s.value===a){c++;s.closest('label').style.background='rgba(16,185,129,.15)';s.closest('label').style.borderColor='#10b981';}else if(s){s.closest('label').style.background='rgba(239,68,68,.15)';s.closest('label').style.borderColor='#ef4444';}}const b=document.getElementById('rb');b.className='rb show';b.innerHTML=`✅ MC: ${c}/${Object.keys(answers).length}<br><small style="font-weight:400;color:var(--tx2)">Review solutions below.</small>`;}
+function reset(){document.querySelectorAll('input[type="radio"]').forEach(r=>r.checked=false);document.querySelectorAll('.ai').forEach(i=>i.value='');document.querySelectorAll('.ar').forEach(e=>e.classList.remove('show'));document.querySelectorAll('.ops label').forEach(l=>{l.style.background='';l.style.borderColor='';});document.getElementById('rb').classList.remove('show');}
+</script>
+</body>
+</html>

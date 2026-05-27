@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Practice — Day 4</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f172a;--card:#1e293b;--pr:#8b5cf6;--prl:#a78bfa;--acc:#f59e0b;--txt:#f1f5f9;--tx2:#94a3b8;--brd:#334155;--r:16px}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);line-height:1.8;min-height:100vh}.hdr{background:linear-gradient(135deg,#4c1d95,var(--pr),#2563eb);color:#fff;text-align:center;padding:48px 20px 40px;position:relative;overflow:hidden}.hdr::after{content:'';position:absolute;bottom:-30px;left:0;right:0;height:60px;background:var(--bg);border-radius:50% 50% 0 0}.hdr h1{font-size:1.8rem;font-weight:700;letter-spacing:1px;position:relative;z-index:1}.hdr p{margin-top:6px;font-size:.95rem;opacity:.85;position:relative;z-index:1}.hdr .tags{display:flex;justify-content:center;gap:8px;margin-top:14px;flex-wrap:wrap;position:relative;z-index:1}.hdr .tag{padding:3px 12px;border-radius:20px;font-size:.72rem;font-weight:600;background:rgba(255,255,255,.15)}.cnt{max-width:820px;margin:-10px auto 60px;padding:0 20px;position:relative;z-index:1}.back{display:inline-flex;align-items:center;gap:6px;color:var(--prl);text-decoration:none;font-weight:600;font-size:.9rem;margin-bottom:20px;transition:opacity .2s}.back:hover{opacity:.8}.qc{background:var(--card);border-radius:var(--r);padding:24px 28px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.3);border-left:5px solid var(--pr);transition:transform .2s}.qc:hover{transform:translateY(-2px)}.qn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:linear-gradient(135deg,var(--pr),var(--prl));color:#fff;border-radius:50%;font-weight:700;font-size:.9rem;margin-bottom:10px}.qt{display:inline-block;margin-left:8px;padding:2px 10px;border-radius:20px;font-size:.72rem;font-weight:600;vertical-align:middle}.qt.mc{background:rgba(139,92,246,.2);color:var(--prl)}.qt.fr{background:rgba(16,185,129,.2);color:#6ee7b7}.qx{font-size:1rem;margin-bottom:14px;line-height:2}.ops{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;margin-bottom:10px}.ops label{display:flex;align-items:center;gap:8px;padding:9px 14px;border:2px solid var(--brd);border-radius:10px;cursor:pointer;transition:all .2s;font-size:.95rem}.ops label:hover{border-color:var(--prl);background:rgba(139,92,246,.08)}.ops input[type="radio"]{accent-color:var(--pr);width:17px;height:17px}.aa{margin-top:10px}.aa>label{font-size:.85rem;color:var(--tx2);font-weight:500}.ai{display:block;width:100%;margin-top:5px;padding:10px 14px;border:2px solid var(--brd);border-radius:10px;font-size:.95rem;font-family:inherit;outline:none;background:var(--bg);color:var(--txt)}.ai:focus{border-color:var(--pr)}.br{text-align:center;margin:32px 0 16px}.bn{display:inline-block;padding:12px 40px;background:linear-gradient(135deg,var(--pr),var(--prl));color:#fff;border:none;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;font-family:inherit;transition:transform .15s,box-shadow .15s}.bn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(139,92,246,.4)}.bn:active{transform:scale(.97)}.rb{display:none;text-align:center;padding:20px;border-radius:var(--r);margin-bottom:20px;font-size:1.1rem;font-weight:700;background:var(--card);border:2px solid var(--brd)}.rb.show{display:block;animation:fi .4s}@keyframes fi{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}.ar{margin-top:8px;padding:10px 14px;background:rgba(15,23,42,.6);border:1px solid var(--brd);border-radius:8px;font-size:.88rem;color:var(--tx2);display:none}.ar.show{display:block;animation:fi .3s}.ar strong{color:var(--prl)}.nav{display:flex;justify-content:space-between;align-items:center;margin-top:24px;padding-top:20px;border-top:1px solid var(--brd)}.nav a{color:var(--prl);text-decoration:none;font-weight:600;font-size:.9rem;transition:opacity .2s}.nav a:hover{opacity:.8}@media(max-width:600px){.ops{grid-template-columns:1fr}.qc{padding:18px}.hdr h1{font-size:1.4rem}}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <h1>📅 Day 4 — Daily Practice</h1>
+  <p>Mixed Topics · 10 Questions · Higher Difficulty</p>
+  <div class="tags"><span class="tag">Speed</span><span class="tag">Systems</span><span class="tag">Slope</span><span class="tag">Variation</span><span class="tag">Work Rate</span></div>
+</div>
+<div class="cnt">
+  <a href="daily_practice.html" class="back">← Back to Daily Practice</a>
+
+  <div class="qc" id="q1">
+    <span class="qn">1</span><span class="qt mc">MC</span>
+    <div class="qx">Two runners start at the same point on a 400 m circular track, running in <strong>opposite directions</strong>. Runner A runs at 5 m/s and Runner B at 3 m/s. How many seconds until they meet for the <em>second</em> time?</div>
+    <div class="ops">
+      <label><input type="radio" name="q1" value="A"><span>(A) 80</span></label>
+      <label><input type="radio" name="q1" value="B"><span>(B) 100</span></label>
+      <label><input type="radio" name="q1" value="C"><span>(C) 120</span></label>
+      <label><input type="radio" name="q1" value="D"><span>(D) 160</span></label>
+    </div>
+    <div class="ar" id="r1"><strong>Answer: (B) 100 s</strong><br>Combined closing speed = 5 + 3 = 8 m/s. First meet at 400/8 = 50 s.<br>Second meet at 2 × 50 = <strong>100 s</strong>.</div>
+  </div>
+
+  <div class="qc" id="q2">
+    <span class="qn">2</span><span class="qt mc">MC</span>
+    <div class="qx">A store blends premium coffee ($15/kg) with standard coffee ($9/kg) to make 20 kg of a blend costing $11.40/kg total. How many kg of premium coffee are used?</div>
+    <div class="ops">
+      <label><input type="radio" name="q2" value="A"><span>(A) 6</span></label>
+      <label><input type="radio" name="q2" value="B"><span>(B) 8</span></label>
+      <label><input type="radio" name="q2" value="C"><span>(C) 10</span></label>
+      <label><input type="radio" name="q2" value="D"><span>(D) 12</span></label>
+    </div>
+    <div class="ar" id="r2"><strong>Answer: (B) 8 kg</strong><br>15p + 9(20 − p) = 228. 15p + 180 − 9p = 228 → 6p = 48 → p = <strong>8</strong>.</div>
+  </div>
+
+  <div class="qc" id="q3">
+    <span class="qn">3</span><span class="qt mc">MC</span>
+    <div class="qx">The midpoint of segment PQ is M(3, 5). If P = (−1, 2), what is the slope of line PQ?</div>
+    <div class="ops">
+      <label><input type="radio" name="q3" value="A"><span>(A) ½</span></label>
+      <label><input type="radio" name="q3" value="B"><span>(B) ¾</span></label>
+      <label><input type="radio" name="q3" value="C"><span>(C) ⁴⁄₃</span></label>
+      <label><input type="radio" name="q3" value="D"><span>(D) 2</span></label>
+    </div>
+    <div class="ar" id="r3"><strong>Answer: (B) ¾</strong><br>Q = (2·3−(−1), 2·5−2) = (7, 8).<br>Slope = (8−2)/(7−(−1)) = 6/8 = <strong>¾</strong>.</div>
+  </div>
+
+  <div class="qc" id="q4">
+    <span class="qn">4</span><span class="qt mc">MC</span>
+    <div class="qx">When the length of a pendulum is quadrupled, its period doubles. Which type of variation does the period follow with respect to pendulum length?</div>
+    <div class="ops">
+      <label><input type="radio" name="q4" value="A"><span>(A) Direct</span></label>
+      <label><input type="radio" name="q4" value="B"><span>(B) Inverse</span></label>
+      <label><input type="radio" name="q4" value="C"><span>(C) Direct as square root</span></label>
+      <label><input type="radio" name="q4" value="D"><span>(D) Inverse square</span></label>
+    </div>
+    <div class="ar" id="r4"><strong>Answer: (C) Direct as square root</strong><br>T = k√L. If L → 4L, then T = k√(4L) = 2k√L = 2T. ✓<br>Period varies directly as the <strong>square root</strong> of the length.</div>
+  </div>
+
+  <div class="qc" id="q5">
+    <span class="qn">5</span><span class="qt mc">MC</span>
+    <div class="qx">A merchant buys an item for $200 and marks it up by 80%. During a sale, a 30% discount is offered. What is the profit?</div>
+    <div class="ops">
+      <label><input type="radio" name="q5" value="A"><span>(A) $12 loss</span></label>
+      <label><input type="radio" name="q5" value="B"><span>(B) $26 profit</span></label>
+      <label><input type="radio" name="q5" value="C"><span>(C) $52 profit</span></label>
+      <label><input type="radio" name="q5" value="D"><span>(D) $72 profit</span></label>
+    </div>
+    <div class="ar" id="r5"><strong>Answer: (C) $52 profit</strong><br>Marked = 200 × 1.8 = $360. Sale = 360 × 0.7 = $252.<br>Profit = 252 − 200 = <strong>$52</strong>.</div>
+  </div>
+
+  <div class="qc" id="q6">
+    <span class="qn">6</span><span class="qt mc">MC</span>
+    <div class="qx">A truck averaging 60 km/h takes 30 minutes longer than a car averaging 80 km/h to travel the same distance. What is the distance?</div>
+    <div class="ops">
+      <label><input type="radio" name="q6" value="A"><span>(A) 80 km</span></label>
+      <label><input type="radio" name="q6" value="B"><span>(B) 100 km</span></label>
+      <label><input type="radio" name="q6" value="C"><span>(C) 120 km</span></label>
+      <label><input type="radio" name="q6" value="D"><span>(D) 160 km</span></label>
+    </div>
+    <div class="ar" id="r6"><strong>Answer: (C) 120 km</strong><br>d/60 − d/80 = 0.5. Finding LCD: (4d − 3d)/240 = 0.5 → d = <strong>120 km</strong>.</div>
+  </div>
+
+  <div class="qc" id="q7">
+    <span class="qn">7</span><span class="qt mc">MC</span>
+    <div class="qx">A two-digit number has digits that sum to 11. Reversing the digits gives a number that is 27 less than the original. What is the original number?</div>
+    <div class="ops">
+      <label><input type="radio" name="q7" value="A"><span>(A) 47</span></label>
+      <label><input type="radio" name="q7" value="B"><span>(B) 56</span></label>
+      <label><input type="radio" name="q7" value="C"><span>(C) 65</span></label>
+      <label><input type="radio" name="q7" value="D"><span>(D) 74</span></label>
+    </div>
+    <div class="ar" id="r7"><strong>Answer: (D) 74</strong><br>a + b = 11. (10a + b) − (10b + a) = 27 → 9(a − b) = 27 → a − b = 3.<br>a = 7, b = 4 → number = <strong>74</strong>.</div>
+  </div>
+
+  <div class="qc" id="q8">
+    <span class="qn">8</span><span class="qt mc">MC</span>
+    <div class="qx">What is the area of the triangle formed by the line y = 2x, the x-axis, and the vertical line x = 5?</div>
+    <div class="ops">
+      <label><input type="radio" name="q8" value="A"><span>(A) 15</span></label>
+      <label><input type="radio" name="q8" value="B"><span>(B) 20</span></label>
+      <label><input type="radio" name="q8" value="C"><span>(C) 25</span></label>
+      <label><input type="radio" name="q8" value="D"><span>(D) 50</span></label>
+    </div>
+    <div class="ar" id="r8"><strong>Answer: (C) 25</strong><br>Vertices: (0,0), (5,0), (5,10). Base = 5, height = 10.<br>Area = ½ × 5 × 10 = <strong>25</strong>.</div>
+  </div>
+
+  <div class="qc" id="q9">
+    <span class="qn">9</span><span class="qt mc">MC</span>
+    <div class="qx">The volume of a gas varies inversely with its pressure at constant temperature. If the volume is 500 mL at 2 atm, what is the volume at 5 atm?</div>
+    <div class="ops">
+      <label><input type="radio" name="q9" value="A"><span>(A) 125 mL</span></label>
+      <label><input type="radio" name="q9" value="B"><span>(B) 200 mL</span></label>
+      <label><input type="radio" name="q9" value="C"><span>(C) 250 mL</span></label>
+      <label><input type="radio" name="q9" value="D"><span>(D) 400 mL</span></label>
+    </div>
+    <div class="ar" id="r9"><strong>Answer: (B) 200 mL</strong><br>PV = k. 2 × 500 = 1000. V = 1000/5 = <strong>200 mL</strong>.</div>
+  </div>
+
+  <div class="qc" id="q10">
+    <span class="qn">10</span><span class="qt mc">MC</span>
+    <div class="qx">Alex can complete a job in 12 days, Ben in 18 days. They work together for 4 days, then Ben quits. How many more days does Alex need to finish alone?</div>
+    <div class="ops">
+      <label><input type="radio" name="q10" value="A"><span>(A) 4⅔</span></label>
+      <label><input type="radio" name="q10" value="B"><span>(B) 5</span></label>
+      <label><input type="radio" name="q10" value="C"><span>(C) 5⅓</span></label>
+      <label><input type="radio" name="q10" value="D"><span>(D) 6</span></label>
+    </div>
+    <div class="ar" id="r10"><strong>Answer: (C) 5⅓ days</strong><br>Combined rate = 1/12 + 1/18 = 5/36. In 4 days: 20/36 = 5/9 done.<br>Remaining: 4/9. Alex alone: (4/9)÷(1/12) = 48/9 = <strong>16/3 ≈ 5⅓ days</strong>.</div>
+  </div>
+
+  <div class="br">
+    <button class="bn" onclick="check()">📝 Check Answers</button>
+    <button class="bn" style="margin-left:10px;background:linear-gradient(135deg,#10b981,#059669)" onclick="reset()">🔄 Start Over</button>
+  </div>
+  <div class="rb" id="rb"></div>
+  <div class="nav"><a href="day3.html">← Day 3</a><a href="day5.html">Day 5 →</a></div>
+</div>
+<script>
+const answers={q1:'B',q2:'B',q3:'B',q4:'C',q5:'C',q6:'C',q7:'D',q8:'C',q9:'B',q10:'C'};
+function check(){for(let i=1;i<=10;i++){const e=document.getElementById('r'+i);if(e)e.classList.add('show');}let c=0;for(const[q,a]of Object.entries(answers)){const s=document.querySelector(`input[name="${q}"]:checked`);if(s&&s.value===a){c++;s.closest('label').style.background='rgba(16,185,129,.15)';s.closest('label').style.borderColor='#10b981';}else if(s){s.closest('label').style.background='rgba(239,68,68,.15)';s.closest('label').style.borderColor='#ef4444';}}const b=document.getElementById('rb');b.className='rb show';b.innerHTML=`✅ MC: ${c}/${Object.keys(answers).length}<br><small style="font-weight:400;color:var(--tx2)">Review solutions below.</small>`;}
+function reset(){document.querySelectorAll('input[type="radio"]').forEach(r=>r.checked=false);document.querySelectorAll('.ai').forEach(i=>i.value='');document.querySelectorAll('.ar').forEach(e=>e.classList.remove('show'));document.querySelectorAll('.ops label').forEach(l=>{l.style.background='';l.style.borderColor='';});document.getElementById('rb').classList.remove('show');}
+</script>
+</body>
+</html>

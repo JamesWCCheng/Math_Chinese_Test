@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Practice — Day 8</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>:root{--bg:#0f172a;--card:#1e293b;--pr:#8b5cf6;--prl:#a78bfa;--txt:#f1f5f9;--tx2:#94a3b8;--brd:#334155;--r:16px}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);line-height:1.8;min-height:100vh}.hdr{background:linear-gradient(135deg,#4c1d95,var(--pr),#2563eb);color:#fff;text-align:center;padding:48px 20px 40px;position:relative;overflow:hidden}.hdr::after{content:'';position:absolute;bottom:-30px;left:0;right:0;height:60px;background:var(--bg);border-radius:50% 50% 0 0}.hdr h1{font-size:1.8rem;font-weight:700;position:relative;z-index:1}.hdr p{margin-top:6px;font-size:.95rem;opacity:.85;position:relative;z-index:1}.hdr .tags{display:flex;justify-content:center;gap:8px;margin-top:14px;flex-wrap:wrap;position:relative;z-index:1}.hdr .tag{padding:3px 12px;border-radius:20px;font-size:.72rem;font-weight:600;background:rgba(255,255,255,.15)}.cnt{max-width:820px;margin:-10px auto 60px;padding:0 20px;position:relative;z-index:1}.back{display:inline-flex;align-items:center;gap:6px;color:var(--prl);text-decoration:none;font-weight:600;font-size:.9rem;margin-bottom:20px}.back:hover{opacity:.8}.qc{background:var(--card);border-radius:var(--r);padding:24px 28px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.3);border-left:5px solid var(--pr);transition:transform .2s}.qc:hover{transform:translateY(-2px)}.qn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:linear-gradient(135deg,var(--pr),var(--prl));color:#fff;border-radius:50%;font-weight:700;font-size:.9rem;margin-bottom:10px}.qt{display:inline-block;margin-left:8px;padding:2px 10px;border-radius:20px;font-size:.72rem;font-weight:600;vertical-align:middle}.qt.mc{background:rgba(139,92,246,.2);color:var(--prl)}.qt.fr{background:rgba(16,185,129,.2);color:#6ee7b7}.qx{font-size:1rem;margin-bottom:14px;line-height:2}.ops{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;margin-bottom:10px}.ops label{display:flex;align-items:center;gap:8px;padding:9px 14px;border:2px solid var(--brd);border-radius:10px;cursor:pointer;transition:all .2s;font-size:.95rem}.ops label:hover{border-color:var(--prl);background:rgba(139,92,246,.08)}.ops input[type="radio"]{accent-color:var(--pr);width:17px;height:17px}.aa{margin-top:10px}.aa>label{font-size:.85rem;color:var(--tx2);font-weight:500}.ai{display:block;width:100%;margin-top:5px;padding:10px 14px;border:2px solid var(--brd);border-radius:10px;font-size:.95rem;font-family:inherit;outline:none;background:var(--bg);color:var(--txt)}.ai:focus{border-color:var(--pr)}.br{text-align:center;margin:32px 0 16px}.bn{display:inline-block;padding:12px 40px;background:linear-gradient(135deg,var(--pr),var(--prl));color:#fff;border:none;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;font-family:inherit;transition:transform .15s,box-shadow .15s}.bn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(139,92,246,.4)}.bn:active{transform:scale(.97)}.rb{display:none;text-align:center;padding:20px;border-radius:var(--r);margin-bottom:20px;font-size:1.1rem;font-weight:700;background:var(--card);border:2px solid var(--brd)}.rb.show{display:block;animation:fi .4s}@keyframes fi{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}.ar{margin-top:8px;padding:10px 14px;background:rgba(15,23,42,.6);border:1px solid var(--brd);border-radius:8px;font-size:.88rem;color:var(--tx2);display:none}.ar.show{display:block;animation:fi .3s}.ar strong{color:var(--prl)}.nav{display:flex;justify-content:space-between;align-items:center;margin-top:24px;padding-top:20px;border-top:1px solid var(--brd)}.nav a{color:var(--prl);text-decoration:none;font-weight:600;font-size:.9rem}.nav a:hover{opacity:.8}@media(max-width:600px){.ops{grid-template-columns:1fr}.qc{padding:18px}.hdr h1{font-size:1.4rem}}</style>
+</head>
+<body>
+<div class="hdr"><h1>📅 Day 8 — Daily Practice</h1><p>Mixed Topics · 10 Questions · Higher Difficulty</p><div class="tags"><span class="tag">Speed</span><span class="tag">Systems</span><span class="tag">Slope</span><span class="tag">Variation</span><span class="tag">Work Rate</span></div></div>
+<div class="cnt">
+  <a href="daily_practice.html" class="back">← Back to Daily Practice</a>
+
+  <div class="qc" id="q1"><span class="qn">1</span><span class="qt mc">MC</span>
+    <div class="qx">A bus travels 120 km at a certain speed. If it had gone 20 km/h faster, the trip would have taken 1 hour less. What was the original speed?</div>
+    <div class="ops"><label><input type="radio" name="q1" value="A"><span>(A) 30 km/h</span></label><label><input type="radio" name="q1" value="B"><span>(B) 40 km/h</span></label><label><input type="radio" name="q1" value="C"><span>(C) 50 km/h</span></label><label><input type="radio" name="q1" value="D"><span>(D) 60 km/h</span></label></div>
+    <div class="ar" id="r1"><strong>Answer: (B) 40 km/h</strong><br>120/v − 120/(v+20) = 1. Try v=40: 3 − 2 = 1 ✓. Original speed = <strong>40 km/h</strong>.</div>
+  </div>
+
+  <div class="qc" id="q2"><span class="qn">2</span><span class="qt mc">MC</span>
+    <div class="qx">A farmer has chickens and cows. Together they have 50 heads and 140 legs. How many cows are there?</div>
+    <div class="ops"><label><input type="radio" name="q2" value="A"><span>(A) 15</span></label><label><input type="radio" name="q2" value="B"><span>(B) 20</span></label><label><input type="radio" name="q2" value="C"><span>(C) 25</span></label><label><input type="radio" name="q2" value="D"><span>(D) 30</span></label></div>
+    <div class="ar" id="r2"><strong>Answer: (B) 20</strong><br>c + k = 50, 2c + 4k = 140. From first: c = 50 − k. 2(50−k) + 4k = 140 → 100 + 2k = 140 → k = <strong>20 cows</strong>.</div>
+  </div>
+
+  <div class="qc" id="q3"><span class="qn">3</span><span class="qt mc">MC</span>
+    <div class="qx">What is the distance between the points (−3, 4) and (5, −2)?</div>
+    <div class="ops"><label><input type="radio" name="q3" value="A"><span>(A) 8</span></label><label><input type="radio" name="q3" value="B"><span>(B) 10</span></label><label><input type="radio" name="q3" value="C"><span>(C) 12</span></label><label><input type="radio" name="q3" value="D"><span>(D) 14</span></label></div>
+    <div class="ar" id="r3"><strong>Answer: (B) 10</strong><br>d = √[(5−(−3))² + (−2−4)²] = √[64 + 36] = √100 = <strong>10</strong>.</div>
+  </div>
+
+  <div class="qc" id="q4"><span class="qn">4</span><span class="qt mc">MC</span>
+    <div class="qx">If y varies directly as the cube of x, and y = 54 when x = 3, what is y when x = 2?</div>
+    <div class="ops"><label><input type="radio" name="q4" value="A"><span>(A) 12</span></label><label><input type="radio" name="q4" value="B"><span>(B) 16</span></label><label><input type="radio" name="q4" value="C"><span>(C) 24</span></label><label><input type="radio" name="q4" value="D"><span>(D) 36</span></label></div>
+    <div class="ar" id="r4"><strong>Answer: (B) 16</strong><br>y = kx³. 54 = 27k → k = 2. y = 2(8) = <strong>16</strong>.</div>
+  </div>
+
+  <div class="qc" id="q5"><span class="qn">5</span><span class="qt mc">MC</span>
+    <div class="qx">A sum of $12,000 is divided among A, B, and C in the ratio 3 : 4 : 5. How much does B receive?</div>
+    <div class="ops"><label><input type="radio" name="q5" value="A"><span>(A) $3,000</span></label><label><input type="radio" name="q5" value="B"><span>(B) $4,000</span></label><label><input type="radio" name="q5" value="C"><span>(C) $5,000</span></label><label><input type="radio" name="q5" value="D"><span>(D) $6,000</span></label></div>
+    <div class="ar" id="r5"><strong>Answer: (B) $4,000</strong><br>Total parts = 12. B's share = 4/12 × 12000 = <strong>$4,000</strong>.</div>
+  </div>
+
+  <div class="qc" id="q6"><span class="qn">6</span><span class="qt mc">MC</span>
+    <div class="qx">Two cars travel from City X to City Y. Car P travels at 80 km/h and Car Q at 100 km/h. Car Q leaves 45 minutes after Car P. They arrive at the same time. What is the distance from X to Y?</div>
+    <div class="ops"><label><input type="radio" name="q6" value="A"><span>(A) 200 km</span></label><label><input type="radio" name="q6" value="B"><span>(B) 250 km</span></label><label><input type="radio" name="q6" value="C"><span>(C) 300 km</span></label><label><input type="radio" name="q6" value="D"><span>(D) 350 km</span></label></div>
+    <div class="ar" id="r6"><strong>Answer: (C) 300 km</strong><br>P travels d/80 hours, Q travels d/100 hours. d/80 − d/100 = 0.75.<br>(5d − 4d)/400 = 0.75 → d = <strong>300 km</strong>.</div>
+  </div>
+
+  <div class="qc" id="q7"><span class="qn">7</span><span class="qt mc">MC</span>
+    <div class="qx">For the system 2x + 3y = 12 and 4x + 6y = k, for what value of k does the system have no solution?</div>
+    <div class="ops"><label><input type="radio" name="q7" value="A"><span>(A) 12</span></label><label><input type="radio" name="q7" value="B"><span>(B) 18</span></label><label><input type="radio" name="q7" value="C"><span>(C) 20</span></label><label><input type="radio" name="q7" value="D"><span>(D) 24</span></label></div>
+    <div class="ar" id="r7"><strong>Answer: (C) 20</strong><br>The second equation is 2× the first when k = 24 (infinite solutions).<br>For no solution: same slope but different intercept, so k ≠ 24. Any k ≠ 24 gives no solution since 2/4 = 3/6 = 1/2 but 12/k ≠ 1/2. k = <strong>20</strong> satisfies this (12/20 ≠ 1/2).</div>
+  </div>
+
+  <div class="qc" id="q8"><span class="qn">8</span><span class="qt fr">Free Response</span>
+    <div class="qx">A line passes through (1, 4) and (5, 12). Write its equation in slope-intercept form (y = mx + b). What is the value of b?</div>
+    <div class="aa"><label for="a8">Your answer:</label><input class="ai" id="a8" type="text" placeholder="Enter b"></div>
+    <div class="ar" id="r8"><strong>Answer: b = 2</strong><br>m = (12−4)/(5−1) = 8/4 = 2. y − 4 = 2(x − 1) → y = 2x + <strong>2</strong>.</div>
+  </div>
+
+  <div class="qc" id="q9"><span class="qn">9</span><span class="qt mc">MC</span>
+    <div class="qx">The weight an elevator cable can support varies directly as the square of its diameter. A 2 cm cable supports 800 kg. What weight can a 3 cm cable support?</div>
+    <div class="ops"><label><input type="radio" name="q9" value="A"><span>(A) 1200 kg</span></label><label><input type="radio" name="q9" value="B"><span>(B) 1500 kg</span></label><label><input type="radio" name="q9" value="C"><span>(C) 1800 kg</span></label><label><input type="radio" name="q9" value="D"><span>(D) 2400 kg</span></label></div>
+    <div class="ar" id="r9"><strong>Answer: (C) 1800 kg</strong><br>W = kd². 800 = 4k → k = 200. W = 200(9) = <strong>1800 kg</strong>.</div>
+  </div>
+
+  <div class="qc" id="q10"><span class="qn">10</span><span class="qt mc">MC</span>
+    <div class="qx">Tank A fills a pool in 8 hours, Tank B in 12 hours. They run together for 3 hours, then both stop. What fraction of the pool is still empty?</div>
+    <div class="ops"><label><input type="radio" name="q10" value="A"><span>(A) 3/8</span></label><label><input type="radio" name="q10" value="B"><span>(B) 5/12</span></label><label><input type="radio" name="q10" value="C"><span>(C) 1/3</span></label><label><input type="radio" name="q10" value="D"><span>(D) 3/8</span></label></div>
+    <div class="ar" id="r10"><strong>Answer: (A) 3/8</strong><br>Rate = 1/8 + 1/12 = 5/24. In 3 hours: 15/24 = 5/8 done.<br>Empty = 1 − 5/8 = <strong>3/8</strong>.</div>
+  </div>
+
+  <div class="br"><button class="bn" onclick="check()">📝 Check Answers</button><button class="bn" style="margin-left:10px;background:linear-gradient(135deg,#10b981,#059669)" onclick="reset()">🔄 Start Over</button></div>
+  <div class="rb" id="rb"></div>
+  <div class="nav"><a href="day7.html">← Day 7</a><a href="day9.html">Day 9 →</a></div>
+</div>
+<script>
+const answers={q1:'B',q2:'B',q3:'B',q4:'B',q5:'B',q6:'C',q7:'C',q9:'C',q10:'A'};
+function check(){for(let i=1;i<=10;i++){const e=document.getElementById('r'+i);if(e)e.classList.add('show');}let c=0;for(const[q,a]of Object.entries(answers)){const s=document.querySelector(`input[name="${q}"]:checked`);if(s&&s.value===a){c++;s.closest('label').style.background='rgba(16,185,129,.15)';s.closest('label').style.borderColor='#10b981';}else if(s){s.closest('label').style.background='rgba(239,68,68,.15)';s.closest('label').style.borderColor='#ef4444';}}const b=document.getElementById('rb');b.className='rb show';b.innerHTML=`✅ MC: ${c}/${Object.keys(answers).length}<br><small style="font-weight:400;color:var(--tx2)">Review solutions below.</small>`;}
+function reset(){document.querySelectorAll('input[type="radio"]').forEach(r=>r.checked=false);document.querySelectorAll('.ai').forEach(i=>i.value='');document.querySelectorAll('.ar').forEach(e=>e.classList.remove('show'));document.querySelectorAll('.ops label').forEach(l=>{l.style.background='';l.style.borderColor='';});document.getElementById('rb').classList.remove('show');}
+</script>
+</body>
+</html>

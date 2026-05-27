@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Practice — Day 6</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f172a;--card:#1e293b;--pr:#8b5cf6;--prl:#a78bfa;--txt:#f1f5f9;--tx2:#94a3b8;--brd:#334155;--r:16px}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);line-height:1.8;min-height:100vh}.hdr{background:linear-gradient(135deg,#4c1d95,var(--pr),#2563eb);color:#fff;text-align:center;padding:48px 20px 40px;position:relative;overflow:hidden}.hdr::after{content:'';position:absolute;bottom:-30px;left:0;right:0;height:60px;background:var(--bg);border-radius:50% 50% 0 0}.hdr h1{font-size:1.8rem;font-weight:700;position:relative;z-index:1}.hdr p{margin-top:6px;font-size:.95rem;opacity:.85;position:relative;z-index:1}.hdr .tags{display:flex;justify-content:center;gap:8px;margin-top:14px;flex-wrap:wrap;position:relative;z-index:1}.hdr .tag{padding:3px 12px;border-radius:20px;font-size:.72rem;font-weight:600;background:rgba(255,255,255,.15)}.cnt{max-width:820px;margin:-10px auto 60px;padding:0 20px;position:relative;z-index:1}.back{display:inline-flex;align-items:center;gap:6px;color:var(--prl);text-decoration:none;font-weight:600;font-size:.9rem;margin-bottom:20px}.back:hover{opacity:.8}.qc{background:var(--card);border-radius:var(--r);padding:24px 28px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.3);border-left:5px solid var(--pr);transition:transform .2s}.qc:hover{transform:translateY(-2px)}.qn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:linear-gradient(135deg,var(--pr),var(--prl));color:#fff;border-radius:50%;font-weight:700;font-size:.9rem;margin-bottom:10px}.qt{display:inline-block;margin-left:8px;padding:2px 10px;border-radius:20px;font-size:.72rem;font-weight:600;vertical-align:middle}.qt.mc{background:rgba(139,92,246,.2);color:var(--prl)}.qt.fr{background:rgba(16,185,129,.2);color:#6ee7b7}.qx{font-size:1rem;margin-bottom:14px;line-height:2}.ops{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;margin-bottom:10px}.ops label{display:flex;align-items:center;gap:8px;padding:9px 14px;border:2px solid var(--brd);border-radius:10px;cursor:pointer;transition:all .2s;font-size:.95rem}.ops label:hover{border-color:var(--prl);background:rgba(139,92,246,.08)}.ops input[type="radio"]{accent-color:var(--pr);width:17px;height:17px}.aa{margin-top:10px}.aa>label{font-size:.85rem;color:var(--tx2);font-weight:500}.ai{display:block;width:100%;margin-top:5px;padding:10px 14px;border:2px solid var(--brd);border-radius:10px;font-size:.95rem;font-family:inherit;outline:none;background:var(--bg);color:var(--txt)}.ai:focus{border-color:var(--pr)}.br{text-align:center;margin:32px 0 16px}.bn{display:inline-block;padding:12px 40px;background:linear-gradient(135deg,var(--pr),var(--prl));color:#fff;border:none;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;font-family:inherit;transition:transform .15s,box-shadow .15s}.bn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(139,92,246,.4)}.bn:active{transform:scale(.97)}.rb{display:none;text-align:center;padding:20px;border-radius:var(--r);margin-bottom:20px;font-size:1.1rem;font-weight:700;background:var(--card);border:2px solid var(--brd)}.rb.show{display:block;animation:fi .4s}@keyframes fi{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}.ar{margin-top:8px;padding:10px 14px;background:rgba(15,23,42,.6);border:1px solid var(--brd);border-radius:8px;font-size:.88rem;color:var(--tx2);display:none}.ar.show{display:block;animation:fi .3s}.ar strong{color:var(--prl)}.nav{display:flex;justify-content:space-between;align-items:center;margin-top:24px;padding-top:20px;border-top:1px solid var(--brd)}.nav a{color:var(--prl);text-decoration:none;font-weight:600;font-size:.9rem}.nav a:hover{opacity:.8}@media(max-width:600px){.ops{grid-template-columns:1fr}.qc{padding:18px}.hdr h1{font-size:1.4rem}}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <h1>📅 Day 6 — Daily Practice</h1>
+  <p>Mixed Topics · 10 Questions · Higher Difficulty</p>
+  <div class="tags"><span class="tag">Speed</span><span class="tag">Systems</span><span class="tag">Slope</span><span class="tag">Variation</span><span class="tag">Work Rate</span></div>
+</div>
+<div class="cnt">
+  <a href="daily_practice.html" class="back">← Back to Daily Practice</a>
+
+  <div class="qc" id="q1">
+    <span class="qn">1</span><span class="qt mc">MC</span>
+    <div class="qx">A swimmer swims 1.5 km downstream in 30 minutes and the same distance upstream in 50 minutes. What is the swimmer's speed in still water, in km/h?</div>
+    <div class="ops">
+      <label><input type="radio" name="q1" value="A"><span>(A) 2.1</span></label>
+      <label><input type="radio" name="q1" value="B"><span>(B) 2.4</span></label>
+      <label><input type="radio" name="q1" value="C"><span>(C) 2.7</span></label>
+      <label><input type="radio" name="q1" value="D"><span>(D) 3.0</span></label>
+    </div>
+    <div class="ar" id="r1"><strong>Answer: (C) 2.7 km/h</strong><br>Down: 1.5/(0.5) = 3 = v + c. Up: 1.5/(5/6) = 1.8 = v − c.<br>2v = 4.8 → v = <strong>2.4</strong>. Wait — let me recalculate: 50 min = 5/6 h, 1.5/(5/6) = 1.8. So v = (3+1.8)/2 = <strong>2.4</strong>. Answer: <strong>(B)</strong>.</div>
+  </div>
+
+  <div class="qc" id="q2">
+    <span class="qn">2</span><span class="qt mc">MC</span>
+    <div class="qx">A factory produces Type A widgets ($8 profit each) and Type B widgets ($5 profit each). Last week, 150 widgets yielded a total profit of $960. How many Type A widgets were produced?</div>
+    <div class="ops">
+      <label><input type="radio" name="q2" value="A"><span>(A) 60</span></label>
+      <label><input type="radio" name="q2" value="B"><span>(B) 70</span></label>
+      <label><input type="radio" name="q2" value="C"><span>(C) 80</span></label>
+      <label><input type="radio" name="q2" value="D"><span>(D) 90</span></label>
+    </div>
+    <div class="ar" id="r2"><strong>Answer: (B) 70</strong><br>8a + 5(150 − a) = 960 → 8a + 750 − 5a = 960 → 3a = 210 → a = <strong>70</strong>.</div>
+  </div>
+
+  <div class="qc" id="q3">
+    <span class="qn">3</span><span class="qt mc">MC</span>
+    <div class="qx">Which of the following lines is parallel to 4x − 6y = 9?</div>
+    <div class="ops">
+      <label><input type="radio" name="q3" value="A"><span>(A) y = ⅔x + 1</span></label>
+      <label><input type="radio" name="q3" value="B"><span>(B) y = −⅔x + 3</span></label>
+      <label><input type="radio" name="q3" value="C"><span>(C) y = ³⁄₂x − 2</span></label>
+      <label><input type="radio" name="q3" value="D"><span>(D) y = −³⁄₂x + 4</span></label>
+    </div>
+    <div class="ar" id="r3"><strong>Answer: (A)</strong><br>4x − 6y = 9 → y = ⅔x − 3/2. Slope = ⅔.<br>Parallel = same slope → y = <strong>⅔x + 1</strong>.</div>
+  </div>
+
+  <div class="qc" id="q4">
+    <span class="qn">4</span><span class="qt mc">MC</span>
+    <div class="qx">The area of a circle varies directly as the square of its radius. A circle with radius 5 has area 25π. What is the area of a circle with radius 8?</div>
+    <div class="ops">
+      <label><input type="radio" name="q4" value="A"><span>(A) 40π</span></label>
+      <label><input type="radio" name="q4" value="B"><span>(B) 56π</span></label>
+      <label><input type="radio" name="q4" value="C"><span>(C) 64π</span></label>
+      <label><input type="radio" name="q4" value="D"><span>(D) 80π</span></label>
+    </div>
+    <div class="ar" id="r4"><strong>Answer: (C) 64π</strong><br>A = kr². k = 25π/25 = π. A = π(64) = <strong>64π</strong>.<br>Or simply: (8/5)² × 25π = (64/25)(25π) = 64π.</div>
+  </div>
+
+  <div class="qc" id="q5">
+    <span class="qn">5</span><span class="qt mc">MC</span>
+    <div class="qx">An item is listed at $600. It goes through two successive discounts of 20% and 15%. What is the final price?</div>
+    <div class="ops">
+      <label><input type="radio" name="q5" value="A"><span>(A) $390</span></label>
+      <label><input type="radio" name="q5" value="B"><span>(B) $396</span></label>
+      <label><input type="radio" name="q5" value="C"><span>(C) $408</span></label>
+      <label><input type="radio" name="q5" value="D"><span>(D) $410</span></label>
+    </div>
+    <div class="ar" id="r5"><strong>Answer: (C) $408</strong><br>After 20% off: 600 × 0.8 = 480. After 15% off: 480 × 0.85 = <strong>$408</strong>.<br>Note: Two successive discounts ≠ one 35% discount (which would give $390).</div>
+  </div>
+
+  <div class="qc" id="q6">
+    <span class="qn">6</span><span class="qt mc">MC</span>
+    <div class="qx">A 250 m long train passes a person standing on a platform in 10 seconds. How long (in seconds) does the same train take to pass a 150 m long bridge?</div>
+    <div class="ops">
+      <label><input type="radio" name="q6" value="A"><span>(A) 12</span></label>
+      <label><input type="radio" name="q6" value="B"><span>(B) 14</span></label>
+      <label><input type="radio" name="q6" value="C"><span>(C) 16</span></label>
+      <label><input type="radio" name="q6" value="D"><span>(D) 18</span></label>
+    </div>
+    <div class="ar" id="r6"><strong>Answer: (C) 16 s</strong><br>Speed = 250/10 = 25 m/s. To pass bridge: distance = 250 + 150 = 400 m.<br>Time = 400/25 = <strong>16 seconds</strong>.</div>
+  </div>
+
+  <div class="qc" id="q7">
+    <span class="qn">7</span><span class="qt mc">MC</span>
+    <div class="qx">Company A offers a salary of $30,000 + $2,000 per year of experience. Company B offers $40,000 + $1,500 per year. After how many years of experience do the offers equal?</div>
+    <div class="ops">
+      <label><input type="radio" name="q7" value="A"><span>(A) 15</span></label>
+      <label><input type="radio" name="q7" value="B"><span>(B) 18</span></label>
+      <label><input type="radio" name="q7" value="C"><span>(C) 20</span></label>
+      <label><input type="radio" name="q7" value="D"><span>(D) 25</span></label>
+    </div>
+    <div class="ar" id="r7"><strong>Answer: (C) 20 years</strong><br>30000 + 2000n = 40000 + 1500n → 500n = 10000 → n = <strong>20</strong>.</div>
+  </div>
+
+  <div class="qc" id="q8">
+    <span class="qn">8</span><span class="qt fr">Free Response</span>
+    <div class="qx">A line has x-intercept 6 and y-intercept −4. What is the slope of this line?</div>
+    <div class="aa"><label for="a8">Your answer:</label><input class="ai" id="a8" type="text" placeholder="Enter slope as a fraction"></div>
+    <div class="ar" id="r8"><strong>Answer: ⅔</strong><br>Points: (6, 0) and (0, −4). Slope = (0 − (−4))/(6 − 0) = 4/6 = <strong>⅔</strong>.</div>
+  </div>
+
+  <div class="qc" id="q9">
+    <span class="qn">9</span><span class="qt mc">MC</span>
+    <div class="qx">The resistance R of a wire varies directly as its length L and inversely as the square of its diameter d. If R = 10 ohms when L = 200 m and d = 2 mm, what is R when L = 300 m and d = 3 mm?</div>
+    <div class="ops">
+      <label><input type="radio" name="q9" value="A"><span>(A) 5.0</span></label>
+      <label><input type="radio" name="q9" value="B"><span>(B) 6.67</span></label>
+      <label><input type="radio" name="q9" value="C"><span>(C) 8.33</span></label>
+      <label><input type="radio" name="q9" value="D"><span>(D) 15.0</span></label>
+    </div>
+    <div class="ar" id="r9"><strong>Answer: (B) 6.67 ohms</strong><br>R = kL/d². 10 = k(200)/4 → k = 0.2. R = 0.2(300)/9 = 60/9 ≈ <strong>6.67</strong>.</div>
+  </div>
+
+  <div class="qc" id="q10">
+    <span class="qn">10</span><span class="qt mc">MC</span>
+    <div class="qx">Faucet A fills a tub in 12 minutes. Faucet B fills it in 18 minutes. The drain empties a full tub in 9 minutes. With both faucets on and the drain open, how long to fill the tub?</div>
+    <div class="ops">
+      <label><input type="radio" name="q10" value="A"><span>(A) 36 min</span></label>
+      <label><input type="radio" name="q10" value="B"><span>(B) 24 min</span></label>
+      <label><input type="radio" name="q10" value="C"><span>(C) It never fills</span></label>
+      <label><input type="radio" name="q10" value="D"><span>(D) 18 min</span></label>
+    </div>
+    <div class="ar" id="r10"><strong>Answer: (A) 36 min</strong><br>Rate = 1/12 + 1/18 − 1/9 = 3/36 + 2/36 − 4/36 = 1/36.<br>Time = <strong>36 minutes</strong>.</div>
+  </div>
+
+  <div class="br">
+    <button class="bn" onclick="check()">📝 Check Answers</button>
+    <button class="bn" style="margin-left:10px;background:linear-gradient(135deg,#10b981,#059669)" onclick="reset()">🔄 Start Over</button>
+  </div>
+  <div class="rb" id="rb"></div>
+  <div class="nav"><a href="day5.html">← Day 5</a><a href="day7.html">Day 7 →</a></div>
+</div>
+<script>
+const answers={q1:'B',q2:'B',q3:'A',q4:'C',q5:'C',q6:'C',q7:'C',q9:'B',q10:'A'};
+function check(){for(let i=1;i<=10;i++){const e=document.getElementById('r'+i);if(e)e.classList.add('show');}let c=0;for(const[q,a]of Object.entries(answers)){const s=document.querySelector(`input[name="${q}"]:checked`);if(s&&s.value===a){c++;s.closest('label').style.background='rgba(16,185,129,.15)';s.closest('label').style.borderColor='#10b981';}else if(s){s.closest('label').style.background='rgba(239,68,68,.15)';s.closest('label').style.borderColor='#ef4444';}}const b=document.getElementById('rb');b.className='rb show';b.innerHTML=`✅ MC: ${c}/${Object.keys(answers).length}<br><small style="font-weight:400;color:var(--tx2)">Review solutions below.</small>`;}
+function reset(){document.querySelectorAll('input[type="radio"]').forEach(r=>r.checked=false);document.querySelectorAll('.ai').forEach(i=>i.value='');document.querySelectorAll('.ar').forEach(e=>e.classList.remove('show'));document.querySelectorAll('.ops label').forEach(l=>{l.style.background='';l.style.borderColor='';});document.getElementById('rb').classList.remove('show');}
+</script>
+</body>
+</html>

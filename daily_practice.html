@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Practice Challenge — 每日綜合練習</title>
+<meta name="description" content="15 days of mixed-topic math practice at higher difficulty — Speed, Systems, Slope, Variation & Ratio.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f172a;--surface:#1e293b;--card:#1e293b;--text:#f1f5f9;--text2:#94a3b8;--border:#334155;--radius:20px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans TC','Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+.hero{position:relative;text-align:center;padding:64px 24px 72px;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(139,92,246,.3) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 80% 20%,rgba(99,102,241,.15) 0%,transparent 50%),radial-gradient(ellipse 50% 40% at 20% 30%,rgba(168,85,247,.12) 0%,transparent 50%);pointer-events:none}
+.hero-icon{font-size:3.2rem;margin-bottom:10px;display:block;animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.hero h1{font-size:2.4rem;font-weight:900;letter-spacing:3px;background:linear-gradient(135deg,#a78bfa,#818cf8,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative}
+.hero p{margin-top:10px;font-size:1.05rem;color:var(--text2);position:relative}
+.hero .stat-row{display:flex;justify-content:center;gap:32px;margin-top:22px;position:relative}
+.stat{text-align:center}
+.stat .num{font-size:2rem;font-weight:900;background:linear-gradient(135deg,#a78bfa,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat .lbl{font-size:.8rem;color:var(--text2)}
+.container{max-width:960px;margin:0 auto;padding:0 24px 80px}
+.back-link{display:inline-flex;align-items:center;gap:8px;color:#818cf8;text-decoration:none;font-weight:600;font-size:.95rem;margin-bottom:28px;transition:opacity .2s}
+.back-link:hover{opacity:.8}
+.section-label{display:flex;align-items:center;gap:12px;margin:0 0 20px;font-size:.85rem;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:3px}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 28px 24px;text-decoration:none;color:var(--text);transition:transform .25s,box-shadow .25s,border-color .25s;overflow:hidden;display:flex;flex-direction:column}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;border-radius:var(--radius) var(--radius) 0 0;transition:height .3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.card:hover::before{height:6px}
+.card .day-num{font-size:2rem;font-weight:900;margin-bottom:6px;background:linear-gradient(135deg,var(--c1,#a78bfa),var(--c2,#818cf8));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.card .card-title{font-size:1rem;font-weight:700;margin-bottom:8px;line-height:1.4}
+.card .card-desc{font-size:.82rem;color:var(--text2);line-height:1.7;flex:1}
+.card .card-meta{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.tag{display:inline-block;padding:3px 10px;border-radius:8px;font-size:.7rem;font-weight:600;letter-spacing:.5px}
+.tag.qs{background:rgba(139,92,246,.15);color:#c4b5fd}
+.tag.mix{background:rgba(251,191,36,.12);color:#fbbf24}
+.tag.hard{background:rgba(244,63,94,.12);color:#fb7185}
+.card-arrow{position:absolute;bottom:24px;right:24px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--text2);transition:all .25s}
+.card:hover .card-arrow{background:rgba(255,255,255,.12);color:#fff;transform:translateX(3px)}
+.footer{text-align:center;padding:32px 20px;color:var(--text2);font-size:.8rem;border-top:1px solid var(--border)}
+@media(max-width:600px){.hero h1{font-size:1.7rem}.cards{grid-template-columns:1fr}.card{padding:24px 20px 20px}.hero .stat-row{gap:16px}.stat .num{font-size:1.5rem}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <span class="hero-icon">📅</span>
+  <h1>Daily Practice Challenge</h1>
+  <p>每日綜合練習 — 混合主題 · 進階難度 · 15 天挑戰</p>
+  <div class="stat-row">
+    <div class="stat"><div class="num">15</div><div class="lbl">Days</div></div>
+    <div class="stat"><div class="num">150</div><div class="lbl">Questions</div></div>
+    <div class="stat"><div class="num">5</div><div class="lbl">Topics Mixed</div></div>
+  </div>
+</div>
+
+<div class="container">
+  <a href="index.html" class="back-link">← Back to Practice Center</a>
+
+  <div class="section-label">📅 Select a Day</div>
+  <div class="cards">
+
+    <a href="day1.html" class="card" style="--c1:#a78bfa;--c2:#818cf8">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#a78bfa,#818cf8)"></div>
+      <div class="day-num">Day 1</div>
+      <div class="card-title">Foundations Mixed</div>
+      <div class="card-desc">Average speed · Linear systems · Perpendicular lines · Inverse variation · Solution mixing</div>
+      <div class="card-meta"><span class="tag qs">10 Qs</span><span class="tag mix">Mixed</span><span class="tag hard">Advanced</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="day2.html" class="card" style="--c1:#818cf8;--c2:#6366f1">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#818cf8,#6366f1)"></div>
+      <div class="day-num">Day 2</div>
+      <div class="card-title">Speed & Algebra</div>
+      <div class="card-desc">Harmonic mean · Investment · Line intersection · Inverse square · Dilution problems</div>
+      <div class="card-meta"><span class="tag qs">10 Qs</span><span class="tag mix">Mixed</span><span class="tag hard">Advanced</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="day3.html" class="card" style="--c1:#6366f1;--c2:#4f46e5">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#6366f1,#4f46e5)"></div>
+      <div class="day-num">Day 3</div>
+      <div class="card-title">Currents & Coins</div>
+      <div class="card-desc">Upstream/downstream · Coin problems · Collinear points · Joint variation · Ratio change</div>
+      <div class="card-meta"><span class="tag qs">10 Qs</span><span class="tag mix">Mixed</span><span class="tag hard">Advanced</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="day4.html" class="card" style="--c1:#4f46e5;--c2:#4338ca">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#4f46e5,#4338ca)"></div>
+      <div class="day-num">Day 4</div>
+      <div class="card-title">Tracks & Blends</div>
+      <div class="card-desc">Circular track · Coffee blending · Midpoint · Pendulum variation · Profit & markup</div>
+      <div class="card-meta"><span class="tag qs">10 Qs</span><span class="tag mix">Mixed</span><span class="tag hard">Advanced</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="day5.html" class="card" style="--c1:#7c3aed;--c2:#6d28d9">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#7c3aed,#6d28d9)"></div>
+      <div class="day-num">Day 5</div>
+      <div class="card-title">Chase & Digits</div>
+      <div class="card-desc">Multi-vehicle chase · Digit problems · Triangle area · Gas law · Sequential work rate</div>
+      <div class="card-meta"><span class="tag qs">10 Qs</span><span class="tag mix">Mixed</span><span class="tag hard">Advanced</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="day6.html" class="card" style="--c1:#8b5cf6;--c2:#7c3aed">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#8b5cf6,#7c3aed)"></div>
+      <div class="day-num">Day 6</div>
+      <div class="card-title">Wind & Break-even</div>
+      <div class="card-desc">Headwind/tailwind · Break-even · Parallel lines · Square variation · Chain discount</div>
+      <div class="card-meta"><span class="tag qs">10 Qs</span><span class="tag mix">Mixed</span><span class="tag hard">Advanced</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="day7.html" class="card" style="--c1:#a855f7;--c2:#9333ea">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#a855f7,#9333ea)"></div>
+      <div class="day-num">Day 7</div>
+      <div class="card-title">Trains & Ages</div>
+      <div class="card-desc">Train passing · Age equations · Standard form · Combined variation · Concentration shift</div>
+      <div class="card-meta"><span class="tag qs">10 Qs</span><span class="tag mix">Mixed</span><span class="tag hard">Advanced</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="day8.html" class="card" style="--c1:#c084fc;--c2:#a855f7">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#c084fc,#a855f7)"></div>
+      <div class="day-num">Day 8</div>
+      <div class="card-title">Algebra & Pipes</div>
+      <div class="card-desc">Speed equations · Supply systems · Distance formula · Direct proportion · Pipe filling</div>
+      <div class="card-meta"><span class="tag qs">10 Qs</span><span class="tag mix">Mixed</span><span class="tag hard">Advanced</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="day9.html" class="card" style="--c1:#d946ef;--c2:#c026d3">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#d946ef,#c026d3)"></div>
+      <div class="day-num">Day 9</div>
+      <div class="card-title">Delays & Scaling</div>
+      <div class="card-desc">Meeting with delay · Parameter systems · Rate of change · Scaling · Time & work splits</div>
+      <div class="card-meta"><span class="tag qs">10 Qs</span><span class="tag mix">Mixed</span><span class="tag hard">Advanced</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="day10.html" class="card" style="--c1:#e879f9;--c2:#d946ef">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#e879f9,#d946ef)"></div>
+      <div class="day-num">Day 10</div>
+      <div class="card-title">Relative & Mixture</div>
+      <div class="card-desc">Relative speed · Currency exchange · Perpendicular bisector · Gear ratio · Mixture problems</div>
+      <div class="card-meta"><span class="tag qs">10 Qs</span><span class="tag mix">Mixed</span><span class="tag hard">Advanced</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="day11.html" class="card" style="--c1:#f0abfc;--c2:#e879f9">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#f0abfc,#e879f9)"></div>
+      <div class="day-num">Day 11</div>
+      <div class="card-title">Geometry & Rates</div>
+      <div class="card-desc">Round trip with stops · Geometry systems · Intercept analysis · Inverse cube · Age ratio</div>
+      <div class="card-meta"><span class="tag qs">10 Qs</span><span class="tag mix">Mixed</span><span class="tag hard">Advanced</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="day12.html" class="card" style="--c1:#f472b6;--c2:#ec4899">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#f472b6,#ec4899)"></div>
+      <div class="day-num">Day 12</div>
+      <div class="card-title">Models & Springs</div>
+      <div class="card-desc">Escalator · Score systems · Slope interpretation · Spring constant · Cost & revenue</div>
+      <div class="card-meta"><span class="tag qs">10 Qs</span><span class="tag mix">Mixed</span><span class="tag hard">Advanced</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="day13.html" class="card" style="--c1:#fb7185;--c2:#f43f5e">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#fb7185,#f43f5e)"></div>
+      <div class="day-num">Day 13</div>
+      <div class="card-title">Ratios & Light</div>
+      <div class="card-desc">Speed ratio · Comparison shopping · Point-slope form · Light intensity · Weighted average</div>
+      <div class="card-meta"><span class="tag qs">10 Qs</span><span class="tag mix">Mixed</span><span class="tag hard">Advanced</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="day14.html" class="card" style="--c1:#f97316;--c2:#ea580c">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#f97316,#ea580c)"></div>
+      <div class="day-num">Day 14</div>
+      <div class="card-title">Multi-Step Mastery</div>
+      <div class="card-desc">Multi-segment journey · Revenue system · Linear models · Population · Efficiency splits</div>
+      <div class="card-meta"><span class="tag qs">10 Qs</span><span class="tag mix">Mixed</span><span class="tag hard">Advanced</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a href="day15.html" class="card" style="--c1:#f59e0b;--c2:#d97706">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#f59e0b,#d97706)"></div>
+      <div class="day-num">Day 15</div>
+      <div class="card-title">Final Challenge</div>
+      <div class="card-desc">Peak difficulty — all topics combined. The ultimate test of your skills!</div>
+      <div class="card-meta"><span class="tag qs">10 Qs</span><span class="tag mix">Mixed</span><span class="tag hard">★ Challenge</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+  </div>
+</div>
+
+<footer class="footer">
+  Built with ❤️ for math practice &nbsp;·&nbsp; 2026
+</footer>
+
+</body>
+</html>

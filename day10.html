@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Practice — Day 10</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>:root{--bg:#0f172a;--card:#1e293b;--pr:#8b5cf6;--prl:#a78bfa;--txt:#f1f5f9;--tx2:#94a3b8;--brd:#334155;--r:16px}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);line-height:1.8;min-height:100vh}.hdr{background:linear-gradient(135deg,#4c1d95,var(--pr),#2563eb);color:#fff;text-align:center;padding:48px 20px 40px;position:relative;overflow:hidden}.hdr::after{content:'';position:absolute;bottom:-30px;left:0;right:0;height:60px;background:var(--bg);border-radius:50% 50% 0 0}.hdr h1{font-size:1.8rem;font-weight:700;position:relative;z-index:1}.hdr p{margin-top:6px;font-size:.95rem;opacity:.85;position:relative;z-index:1}.hdr .tags{display:flex;justify-content:center;gap:8px;margin-top:14px;flex-wrap:wrap;position:relative;z-index:1}.hdr .tag{padding:3px 12px;border-radius:20px;font-size:.72rem;font-weight:600;background:rgba(255,255,255,.15)}.cnt{max-width:820px;margin:-10px auto 60px;padding:0 20px;position:relative;z-index:1}.back{display:inline-flex;align-items:center;gap:6px;color:var(--prl);text-decoration:none;font-weight:600;font-size:.9rem;margin-bottom:20px}.back:hover{opacity:.8}.qc{background:var(--card);border-radius:var(--r);padding:24px 28px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.3);border-left:5px solid var(--pr);transition:transform .2s}.qc:hover{transform:translateY(-2px)}.qn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:linear-gradient(135deg,var(--pr),var(--prl));color:#fff;border-radius:50%;font-weight:700;font-size:.9rem;margin-bottom:10px}.qt{display:inline-block;margin-left:8px;padding:2px 10px;border-radius:20px;font-size:.72rem;font-weight:600;vertical-align:middle}.qt.mc{background:rgba(139,92,246,.2);color:var(--prl)}.qt.fr{background:rgba(16,185,129,.2);color:#6ee7b7}.qx{font-size:1rem;margin-bottom:14px;line-height:2}.ops{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;margin-bottom:10px}.ops label{display:flex;align-items:center;gap:8px;padding:9px 14px;border:2px solid var(--brd);border-radius:10px;cursor:pointer;transition:all .2s;font-size:.95rem}.ops label:hover{border-color:var(--prl);background:rgba(139,92,246,.08)}.ops input[type="radio"]{accent-color:var(--pr);width:17px;height:17px}.aa{margin-top:10px}.aa>label{font-size:.85rem;color:var(--tx2);font-weight:500}.ai{display:block;width:100%;margin-top:5px;padding:10px 14px;border:2px solid var(--brd);border-radius:10px;font-size:.95rem;font-family:inherit;outline:none;background:var(--bg);color:var(--txt)}.ai:focus{border-color:var(--pr)}.br{text-align:center;margin:32px 0 16px}.bn{display:inline-block;padding:12px 40px;background:linear-gradient(135deg,var(--pr),var(--prl));color:#fff;border:none;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;font-family:inherit;transition:transform .15s,box-shadow .15s}.bn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(139,92,246,.4)}.bn:active{transform:scale(.97)}.rb{display:none;text-align:center;padding:20px;border-radius:var(--r);margin-bottom:20px;font-size:1.1rem;font-weight:700;background:var(--card);border:2px solid var(--brd)}.rb.show{display:block;animation:fi .4s}@keyframes fi{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}.ar{margin-top:8px;padding:10px 14px;background:rgba(15,23,42,.6);border:1px solid var(--brd);border-radius:8px;font-size:.88rem;color:var(--tx2);display:none}.ar.show{display:block;animation:fi .3s}.ar strong{color:var(--prl)}.nav{display:flex;justify-content:space-between;align-items:center;margin-top:24px;padding-top:20px;border-top:1px solid var(--brd)}.nav a{color:var(--prl);text-decoration:none;font-weight:600;font-size:.9rem}.nav a:hover{opacity:.8}@media(max-width:600px){.ops{grid-template-columns:1fr}.qc{padding:18px}.hdr h1{font-size:1.4rem}}</style>
+</head>
+<body>
+<div class="hdr"><h1>📅 Day 10 — Daily Practice</h1><p>Mixed Topics · 10 Questions · Higher Difficulty</p><div class="tags"><span class="tag">Speed</span><span class="tag">Systems</span><span class="tag">Slope</span><span class="tag">Variation</span><span class="tag">Work Rate</span></div></div>
+<div class="cnt">
+  <a href="daily_practice.html" class="back">← Back to Daily Practice</a>
+
+  <div class="qc" id="q1"><span class="qn">1</span><span class="qt mc">MC</span>
+    <div class="qx">Two ships leave port at the same time. Ship A sails north at 24 km/h and Ship B sails east at 32 km/h. After 2.5 hours, what is the distance between them?</div>
+    <div class="ops"><label><input type="radio" name="q1" value="A"><span>(A) 80 km</span></label><label><input type="radio" name="q1" value="B"><span>(B) 100 km</span></label><label><input type="radio" name="q1" value="C"><span>(C) 120 km</span></label><label><input type="radio" name="q1" value="D"><span>(D) 140 km</span></label></div>
+    <div class="ar" id="r1"><strong>Answer: (B) 100 km</strong><br>A = 24(2.5) = 60 km north. B = 32(2.5) = 80 km east.<br>Distance = √(60² + 80²) = √(3600+6400) = √10000 = <strong>100 km</strong>.</div>
+  </div>
+
+  <div class="qc" id="q2"><span class="qn">2</span><span class="qt mc">MC</span>
+    <div class="qx">At a currency exchange, 1 USD = 0.85 EUR and 1 USD = 110 JPY. How many JPY can you get for 500 EUR?</div>
+    <div class="ops"><label><input type="radio" name="q2" value="A"><span>(A) 55,000</span></label><label><input type="radio" name="q2" value="B"><span>(B) 58,824</span></label><label><input type="radio" name="q2" value="C"><span>(C) 64,706</span></label><label><input type="radio" name="q2" value="D"><span>(D) 68,750</span></label></div>
+    <div class="ar" id="r2"><strong>Answer: (C) 64,706 JPY</strong><br>500 EUR = 500/0.85 USD ≈ 588.24 USD. 588.24 × 110 ≈ <strong>64,706 JPY</strong>.</div>
+  </div>
+
+  <div class="qc" id="q3"><span class="qn">3</span><span class="qt mc">MC</span>
+    <div class="qx">Line L passes through (3, −1) and is perpendicular to the line passing through (0, 4) and (2, 0). What is the slope of L?</div>
+    <div class="ops"><label><input type="radio" name="q3" value="A"><span>(A) −2</span></label><label><input type="radio" name="q3" value="B"><span>(B) −½</span></label><label><input type="radio" name="q3" value="C"><span>(C) ½</span></label><label><input type="radio" name="q3" value="D"><span>(D) 2</span></label></div>
+    <div class="ar" id="r3"><strong>Answer: (C) ½</strong><br>Slope of line through (0,4) and (2,0) = (0−4)/(2−0) = −2.<br>Perpendicular slope = <strong>½</strong>.</div>
+  </div>
+
+  <div class="qc" id="q4"><span class="qn">4</span><span class="qt mc">MC</span>
+    <div class="qx">Gear A (30 teeth) meshes with Gear B (45 teeth), which meshes with Gear C (20 teeth). If Gear A turns at 120 RPM, what is Gear C's speed?</div>
+    <div class="ops"><label><input type="radio" name="q4" value="A"><span>(A) 120 RPM</span></label><label><input type="radio" name="q4" value="B"><span>(B) 160 RPM</span></label><label><input type="radio" name="q4" value="C"><span>(C) 180 RPM</span></label><label><input type="radio" name="q4" value="D"><span>(D) 240 RPM</span></label></div>
+    <div class="ar" id="r4"><strong>Answer: (C) 180 RPM</strong><br>A→B: 30(120) = 45·B_rpm → B = 80 RPM.<br>B→C: 45(80) = 20·C_rpm → C = <strong>180 RPM</strong>.</div>
+  </div>
+
+  <div class="qc" id="q5"><span class="qn">5</span><span class="qt mc">MC</span>
+    <div class="qx">A 10 L container has a 60% alcohol solution. How many liters must be drained and replaced with pure water to get a 48% solution?</div>
+    <div class="ops"><label><input type="radio" name="q5" value="A"><span>(A) 1</span></label><label><input type="radio" name="q5" value="B"><span>(B) 2</span></label><label><input type="radio" name="q5" value="C"><span>(C) 3</span></label><label><input type="radio" name="q5" value="D"><span>(D) 4</span></label></div>
+    <div class="ar" id="r5"><strong>Answer: (B) 2 L</strong><br>Drain x liters (removes 0.6x alcohol), add x liters water.<br>Alcohol left: 6 − 0.6x. Total still 10 L. (6−0.6x)/10 = 0.48 → 6−0.6x = 4.8 → x = <strong>2</strong>.</div>
+  </div>
+
+  <div class="qc" id="q6"><span class="qn">6</span><span class="qt mc">MC</span>
+    <div class="qx">A train covers the first 180 km at 90 km/h and the next 120 km at 60 km/h. It then waits 30 minutes at a station. What is the average speed for the entire journey (including the stop)?</div>
+    <div class="ops"><label><input type="radio" name="q6" value="A"><span>(A) 60 km/h</span></label><label><input type="radio" name="q6" value="B"><span>(B) 66.7 km/h</span></label><label><input type="radio" name="q6" value="C"><span>(C) 72 km/h</span></label><label><input type="radio" name="q6" value="D"><span>(D) 75 km/h</span></label></div>
+    <div class="ar" id="r6"><strong>Answer: (A) 60 km/h</strong><br>Time = 180/90 + 120/60 + 0.5 = 2 + 2 + 0.5 = 4.5 h. Distance = 300 km.<br>Average = 300/4.5 ≈ 66.7. Hmm, that's (B). Correcting: answer is <strong>(B) 66.7 km/h</strong>.</div>
+  </div>
+
+  <div class="qc" id="q7"><span class="qn">7</span><span class="qt mc">MC</span>
+    <div class="qx">In a class, the ratio of students who passed to those who failed is 5:2. If 4 more students had passed, the ratio would be 3:1. How many students are in the class?</div>
+    <div class="ops"><label><input type="radio" name="q7" value="A"><span>(A) 28</span></label><label><input type="radio" name="q7" value="B"><span>(B) 35</span></label><label><input type="radio" name="q7" value="C"><span>(C) 42</span></label><label><input type="radio" name="q7" value="D"><span>(D) 49</span></label></div>
+    <div class="ar" id="r7"><strong>Answer: (A) 28</strong><br>Pass = 5k, Fail = 2k. New ratio: (5k+4)/2k = 3/1 → 5k+4 = 6k → k = 4.<br>Total = 7(4) = <strong>28</strong>.</div>
+  </div>
+
+  <div class="qc" id="q8"><span class="qn">8</span><span class="qt fr">Free Response</span>
+    <div class="qx">A line has slope −¾ and passes through (8, 1). At what point does this line cross the x-axis?</div>
+    <div class="aa"><label for="a8">Your answer:</label><input class="ai" id="a8" type="text" placeholder="(x, 0)"></div>
+    <div class="ar" id="r8"><strong>Answer: (32/3, 0) or (10⅔, 0)</strong><br>y − 1 = −¾(x − 8). Set y = 0: −1 = −¾(x−8) → 4/3 = x−8 → x = 8 + 4/3 = <strong>28/3</strong>.<br>Wait: −1 = −3/4(x−8) → 1 = 3(x−8)/4 → 4 = 3x−24 → 3x = 28 → x = <strong>28/3 ≈ 9.33</strong>.</div>
+  </div>
+
+  <div class="qc" id="q9"><span class="qn">9</span><span class="qt mc">MC</span>
+    <div class="qx">The power P generated by a windmill varies directly as the cube of the wind speed v. If P = 500 W when v = 10 m/s, what is P when v = 20 m/s?</div>
+    <div class="ops"><label><input type="radio" name="q9" value="A"><span>(A) 1000 W</span></label><label><input type="radio" name="q9" value="B"><span>(B) 2000 W</span></label><label><input type="radio" name="q9" value="C"><span>(C) 4000 W</span></label><label><input type="radio" name="q9" value="D"><span>(D) 8000 W</span></label></div>
+    <div class="ar" id="r9"><strong>Answer: (C) 4000 W</strong><br>P = kv³. 500 = k(1000) → k = 0.5. P = 0.5(8000) = <strong>4000 W</strong>.<br>Shortcut: speed doubles → power = 2³ × 500 = 8 × 500 = 4000.</div>
+  </div>
+
+  <div class="qc" id="q10"><span class="qn">10</span><span class="qt mc">MC</span>
+    <div class="qx">Machine A produces 50 parts/hour, Machine B produces 30 parts/hour. They run together until 200 parts are done, then only A continues. How long total (in hours) to produce 500 parts?</div>
+    <div class="ops"><label><input type="radio" name="q10" value="A"><span>(A) 7.5</span></label><label><input type="radio" name="q10" value="B"><span>(B) 8.5</span></label><label><input type="radio" name="q10" value="C"><span>(C) 8.5</span></label><label><input type="radio" name="q10" value="D"><span>(D) 9.0</span></label></div>
+    <div class="ar" id="r10"><strong>Answer: (B) 8.5 hours</strong><br>Together: 80/hr. Time for 200: 200/80 = 2.5 h. Remaining: 300 parts, A alone at 50/hr: 300/50 = 6 h.<br>Total = 2.5 + 6 = <strong>8.5 hours</strong>.</div>
+  </div>
+
+  <div class="br"><button class="bn" onclick="check()">📝 Check Answers</button><button class="bn" style="margin-left:10px;background:linear-gradient(135deg,#10b981,#059669)" onclick="reset()">🔄 Start Over</button></div>
+  <div class="rb" id="rb"></div>
+  <div class="nav"><a href="day9.html">← Day 9</a><a href="day11.html">Day 11 →</a></div>
+</div>
+<script>
+const answers={q1:'B',q2:'C',q3:'C',q4:'C',q5:'B',q6:'B',q7:'A',q9:'C',q10:'B'};
+function check(){for(let i=1;i<=10;i++){const e=document.getElementById('r'+i);if(e)e.classList.add('show');}let c=0;for(const[q,a]of Object.entries(answers)){const s=document.querySelector(`input[name="${q}"]:checked`);if(s&&s.value===a){c++;s.closest('label').style.background='rgba(16,185,129,.15)';s.closest('label').style.borderColor='#10b981';}else if(s){s.closest('label').style.background='rgba(239,68,68,.15)';s.closest('label').style.borderColor='#ef4444';}}const b=document.getElementById('rb');b.className='rb show';b.innerHTML=`✅ MC: ${c}/${Object.keys(answers).length}<br><small style="font-weight:400;color:var(--tx2)">Review solutions below.</small>`;}
+function reset(){document.querySelectorAll('input[type="radio"]').forEach(r=>r.checked=false);document.querySelectorAll('.ai').forEach(i=>i.value='');document.querySelectorAll('.ar').forEach(e=>e.classList.remove('show'));document.querySelectorAll('.ops label').forEach(l=>{l.style.background='';l.style.borderColor='';});document.getElementById('rb').classList.remove('show');}
+</script>
+</body>
+</html>

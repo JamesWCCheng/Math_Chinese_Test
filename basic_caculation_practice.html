@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basic Calculation Practice — 基礎計算練習</title>
+<meta name="description" content="15 days of English math practice covering linear equations, systems, inequalities, and word problems.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f172a;--surface:#1e293b;--card:#1e293b;--text:#f1f5f9;--text2:#94a3b8;--border:#334155;--radius:20px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans TC','Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+.hero{position:relative;text-align:center;padding:64px 24px 72px;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(16,185,129,.2) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 80% 20%,rgba(6,182,212,.12) 0%,transparent 50%),radial-gradient(ellipse 50% 40% at 20% 30%,rgba(59,130,246,.1) 0%,transparent 50%);pointer-events:none}
+.hero-icon{font-size:3.2rem;margin-bottom:10px;display:block;animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.hero h1{font-size:2.4rem;font-weight:900;letter-spacing:2px;background:linear-gradient(135deg,#34d399,#06b6d4,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative}
+.hero p{margin-top:10px;font-size:1.05rem;color:var(--text2);position:relative}
+.hero .stat-row{display:flex;justify-content:center;gap:32px;margin-top:22px;position:relative}
+.stat{text-align:center}
+.stat .num{font-size:2rem;font-weight:900;background:linear-gradient(135deg,#34d399,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat .lbl{font-size:.8rem;color:var(--text2)}
+.container{max-width:960px;margin:0 auto;padding:0 24px 80px}
+.back-link{display:inline-flex;align-items:center;gap:8px;color:#34d399;text-decoration:none;font-weight:600;font-size:.95rem;margin-bottom:28px;transition:opacity .2s}
+.back-link:hover{opacity:.8}
+.section-label{display:flex;align-items:center;gap:12px;margin:0 0 20px;font-size:.85rem;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:3px}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 28px 24px;text-decoration:none;color:var(--text);transition:transform .25s,box-shadow .25s,border-color .25s;overflow:hidden;display:flex;flex-direction:column}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;border-radius:var(--radius) var(--radius) 0 0;transition:height .3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.card:hover::before{height:6px}
+.card .day-num{font-size:2rem;font-weight:900;margin-bottom:6px;background:linear-gradient(135deg,var(--c1,#34d399),var(--c2,#06b6d4));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.card .card-title{font-size:1rem;font-weight:700;margin-bottom:8px;line-height:1.4}
+.card .card-desc{font-size:.82rem;color:var(--text2);line-height:1.7;flex:1}
+.card .card-meta{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.tag{display:inline-block;padding:3px 10px;border-radius:8px;font-size:.7rem;font-weight:600;letter-spacing:.5px}
+.tag.qs{background:rgba(16,185,129,.15);color:#a7f3d0}
+.tag.lang{background:rgba(6,182,212,.12);color:#c5f2f7}
+.tag.basics{background:rgba(59,130,246,.12);color:#bfdbfe}
+.card-arrow{position:absolute;bottom:24px;right:24px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--text2);transition:all .25s}
+.card:hover class-arrow, .card:hover .card-arrow{background:rgba(255,255,255,.12);color:#fff;transform:translateX(3px)}
+.footer{text-align:center;padding:32px 20px;color:var(--text2);font-size:.8rem;border-top:1px solid var(--border)}
+@media(max-width:600px){.hero h1{font-size:1.7rem}.cards{grid-template-columns:1fr}.card{padding:24px 20px 20px}.hero .stat-row{gap:16px}.stat .num{font-size:1.5rem}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <span class="hero-icon">🧮</span>
+  <h1>Basic Calculation Practice</h1>
+  <p>基礎計算練習 — 4大單元 · 英文命題 · 15天計畫</p>
+  <div class="stat-row">
+    <div class="stat"><div class="num">15</div><div class="lbl">Days</div></div>
+    <div class="stat"><div class="num">75</div><div class="lbl">Questions</div></div>
+    <div class="stat"><div class="num">4</div><div class="lbl">Units Covered</div></div>
+  </div>
+</div>
+
+<div class="container">
+  <a href="index.html" class="back-link">← Back to Practice Center</a>
+
+  <div class="section-label">📅 Select a Day</div>
+  <div class="cards">
+
+    <!-- Day 1 -->
+    <a href="basic_day1.html" class="card" style="--c1:#34d399;--c2:#059669">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#34d399,#059669)"></div>
+      <div class="day-num">Day 1</div>
+      <div class="card-title">Foundational Equations &amp; Word Problems</div>
+      <div class="card-desc">Linear equations · Simple 2x2 systems · Basic inequalities · Age &amp; coin applications.</div>
+      <div class="card-meta"><span class="tag qs">5 Qs</span><span class="tag lang">English</span><span class="tag basics">Basics</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <!-- Day 2 -->
+    <a href="basic_day2.html" class="card" style="--c1:#059669;--c2:#0d9488">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#059669,#0d9488)"></div>
+      <div class="day-num">Day 2</div>
+      <div class="card-title">Fractions &amp; Simple Inequalities</div>
+      <div class="card-desc">Equations with fractions · System substitution · Negative inequalities · Consecutive integers.</div>
+      <div class="card-meta"><span class="tag qs">5 Qs</span><span class="tag lang">English</span><span class="tag basics">Fractions</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <!-- Day 3 -->
+    <a href="basic_day3.html" class="card" style="--c1:#0d9488;--c2:#0ea5e9">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#0d9488,#0ea5e9)"></div>
+      <div class="day-num">Day 3</div>
+      <div class="card-title">Parentheses &amp; Percent Mixtures</div>
+      <div class="card-desc">Distributive property · Systems by elimination · Inequality intervals · Perimeter &amp; mixture problems.</div>
+      <div class="card-meta"><span class="tag qs">5 Qs</span><span class="tag lang">English</span><span class="tag basics">Algebra</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <!-- Day 4 -->
+    <a href="basic_day4.html" class="card" style="--c1:#0ea5e9;--c2:#2563eb">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#0ea5e9,#2563eb)"></div>
+      <div class="day-num">Day 4</div>
+      <div class="card-title">Combined Systems &amp; Motion</div>
+      <div class="card-desc">Multi-step equations · Systems with fractions · System of inequalities · Speed-distance-time &amp; work rates.</div>
+      <div class="card-meta"><span class="tag qs">5 Qs</span><span class="tag lang">English</span><span class="tag basics">Motion</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <!-- Day 5 -->
+    <a href="basic_day5.html" class="card" style="--c1:#2563eb;--c2:#4f46e5">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#2563eb,#4f46e5)"></div>
+      <div class="day-num">Day 5</div>
+      <div class="card-title">Fractions &amp; Financial Word Problems</div>
+      <div class="card-desc">Advanced fraction equations · Systems with parentheses · Fractional inequalities · Investments &amp; ratios.</div>
+      <div class="card-meta"><span class="tag qs">5 Qs</span><span class="tag lang">English</span><span class="tag basics">Finance</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <!-- Day 6 -->
+    <a href="basic_day6.html" class="card" style="--c1:#4f46e5;--c2:#6366f1">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#4f46e5,#6366f1)"></div>
+      <div class="day-num">Day 6</div>
+      <div class="card-title">Decimals &amp; Dilution Solutions</div>
+      <div class="card-desc">Decimal equations · Standard form systems · Compound inequalities · Average speeds &amp; saline mixing.</div>
+      <div class="card-meta"><span class="tag qs">5 Qs</span><span class="tag lang">English</span><span class="tag basics">Decimals</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <!-- Day 7 -->
+    <a href="basic_day7.html" class="card" style="--c1:#6366f1;--c2:#8b5cf6">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#6366f1,#8b5cf6)"></div>
+      <div class="day-num">Day 7</div>
+      <div class="card-title">Multi-Step Practice &amp; Business Profit</div>
+      <div class="card-desc">Parentheses with fractions · Decimal systems · Integer solutions count · Cooperating work · Profit margins.</div>
+      <div class="card-meta"><span class="tag qs">5 Qs</span><span class="tag lang">English</span><span class="tag basics">Profit</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <!-- Day 8 -->
+    <a href="basic_day8.html" class="card" style="--c1:#8b5cf6;--c2:#ec4899">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#8b5cf6,#ec4899)"></div>
+      <div class="day-num">Day 8</div>
+      <div class="card-title">Advanced Equations &amp; Relative Wind</div>
+      <div class="card-desc">Nested parentheses · System solution criteria · Graphical inequality ranges · Headwind/tailwind.</div>
+      <div class="card-meta"><span class="tag qs">5 Qs</span><span class="tag lang">English</span><span class="tag basics">Systems</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <!-- Day 9 -->
+    <a href="basic_day9.html" class="card" style="--c1:#ec4899;--c2:#f43f5e">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#ec4899,#f43f5e)"></div>
+      <div class="day-num">Day 9</div>
+      <div class="card-title">Variables on Both Sides &amp; Rates</div>
+      <div class="card-desc">Double-sided equations · Substitution drill · Interval representations · Gender ratios · Double pipe filling.</div>
+      <div class="card-meta"><span class="tag qs">5 Qs</span><span class="tag lang">English</span><span class="tag basics">Variables</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <!-- Day 10 -->
+    <a href="basic_day10.html" class="card" style="--c1:#f43f5e;--c2:#f97316">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#f43f5e,#f97316)"></div>
+      <div class="day-num">Day 10</div>
+      <div class="card-title">Fractional Variable Equations &amp; Budgets</div>
+      <div class="card-desc">Fraction variables · Harder elimination · Compound negative inequalities · Budgets &amp; student tickets.</div>
+      <div class="card-meta"><span class="tag qs">5 Qs</span><span class="tag lang">English</span><span class="tag basics">Budget</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <!-- Day 11 -->
+    <a href="basic_day11.html" class="card" style="--c1:#f97316;--c2:#eab308">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#f97316,#eab308)"></div>
+      <div class="day-num">Day 11</div>
+      <div class="card-title">Constraints, Rowing &amp; Work Speeds</div>
+      <div class="card-desc">Multi-step fraction solving · System expansions · Inequalities on both sides · Upstream/downstream.</div>
+      <div class="card-meta"><span class="tag qs">5 Qs</span><span class="tag lang">English</span><span class="tag basics">Motion</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <!-- Day 12 -->
+    <a href="basic_day12.html" class="card" style="--c1:#eab308;--c2:#84cc16">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#eab308,#84cc16)"></div>
+      <div class="day-num">Day 12</div>
+      <div class="card-title">Mixed Decimals, Fractions &amp; Break-even</div>
+      <div class="card-desc">Mixed linear equations · Fractional system drill · Fractional inequality expansion · Break-even point.</div>
+      <div class="card-meta"><span class="tag qs">5 Qs</span><span class="tag lang">English</span><span class="tag basics">Finance</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <!-- Day 13 -->
+    <a href="basic_day13.html" class="card" style="--c1:#84cc16;--c2:#10b981">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#84cc16,#10b981)"></div>
+      <div class="day-num">Day 13</div>
+      <div class="card-title">Three-Term Fractions &amp; Head-on Trains</div>
+      <div class="card-desc">Complex fraction equations · Double substitution systems · Inequality fraction compounds · Train meetings.</div>
+      <div class="card-meta"><span class="tag qs">5 Qs</span><span class="tag lang">English</span><span class="tag basics">Intermediate</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <!-- Day 14 -->
+    <a href="basic_day14.html" class="card" style="--c1:#10b981;--c2:#06b6d4">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#10b981,#06b6d4)"></div>
+      <div class="day-num">Day 14</div>
+      <div class="card-title">System Parameters &amp; Discount Reversals</div>
+      <div class="card-desc">Nested fractions · Parametric system solving · Negative fraction inequalities · Discount recovery.</div>
+      <div class="card-meta"><span class="tag qs">5 Qs</span><span class="tag lang">English</span><span class="tag basics">Advanced</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <!-- Day 15 -->
+    <a href="basic_day15.html" class="card" style="--c1:#06b6d4;--c2:#3b82f6">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#06b6d4,#3b82f6)"></div>
+      <div class="day-num">Day 15</div>
+      <div class="card-title">Final Calculation Mastery Challenge</div>
+      <div class="card-desc">Ultimate linear algebraic test · Combined systems &amp; compound inequalities · Double word problems.</div>
+      <div class="card-meta"><span class="tag qs">5 Qs</span><span class="tag lang">English</span><span class="tag basics">★ Challenge</span></div>
+      <div class="card-arrow">→</div>
+    </a>
+
+  </div>
+</div>
+
+<footer class="footer">
+  Built with ❤️ for math practice &nbsp;·&nbsp; 2026
+</footer>
+
+</body>
+</html>

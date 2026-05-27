@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basic Practice — Day 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f172a;--card:#1e293b;--pr:#059669;--prl:#34d399;--acc:#f59e0b;--txt:#f1f5f9;--tx2:#94a3b8;--brd:#334155;--ok:#10b981;--r:16px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);line-height:1.8;min-height:100vh}
+.hdr{background:linear-gradient(135deg,#064e3b,var(--pr),#0d9488);color:#fff;text-align:center;padding:48px 20px 40px;position:relative;overflow:hidden}
+.hdr::after{content:'';position:absolute;bottom:-30px;left:0;right:0;height:60px;background:var(--bg);border-radius:50% 50% 0 0}
+.hdr h1{font-size:1.8rem;font-weight:700;letter-spacing:1px;position:relative;z-index:1}
+.hdr p{margin-top:6px;font-size:.95rem;opacity:.85;position:relative;z-index:1}
+.hdr .tags{display:flex;justify-content:center;gap:8px;margin-top:14px;flex-wrap:wrap;position:relative;z-index:1}
+.hdr .tag{padding:3px 12px;border-radius:20px;font-size:.72rem;font-weight:600;background:rgba(255,255,255,.15);backdrop-filter:blur(8px)}
+.cnt{max-width:820px;margin:-10px auto 60px;padding:0 20px;position:relative;z-index:1}
+.back{display:inline-flex;align-items:center;gap:6px;color:var(--prl);text-decoration:none;font-weight:600;font-size:.9rem;margin-bottom:20px;transition:opacity .2s}
+.back:hover{opacity:.8}
+.qc{background:var(--card);border-radius:var(--r);padding:24px 28px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.3);border-left:5px solid var(--pr);transition:transform .2s}
+.qc:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(16,185,129,.15)}
+.qn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:linear-gradient(135deg,var(--pr),var(--prl));color:#fff;border-radius:50%;font-weight:700;font-size:.9rem;margin-bottom:10px}
+.qt{display:inline-block;margin-left:8px;padding:2px 10px;border-radius:20px;font-size:.72rem;font-weight:600;vertical-align:middle}
+.qt.mc{background:rgba(16,185,129,.2);color:var(--prl)}
+.qt.fr{background:rgba(59,130,246,.2);color:#93c5fd}
+.qx{font-size:1rem;margin-bottom:14px;line-height:2}
+.ops{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;margin-bottom:10px}
+.ops label{display:flex;align-items:center;gap:8px;padding:9px 14px;border:2px solid var(--brd);border-radius:10px;cursor:pointer;transition:all .2s;font-size:.95rem}
+.ops label:hover{border-color:var(--prl);background:rgba(16,185,129,.08)}
+.ops input[type="radio"]{accent-color:var(--pr);width:17px;height:17px}
+.aa{margin-top:10px}.aa>label{font-size:.85rem;color:var(--tx2);font-weight:500}
+.ai{display:block;width:100%;margin-top:5px;padding:10px 14px;border:2px solid var(--brd);border-radius:10px;font-size:.95rem;font-family:inherit;outline:none;background:var(--bg);color:var(--txt)}.ai:focus{border-color:var(--pr)}
+.br{text-align:center;margin:32px 0 16px}
+.bn{display:inline-block;padding:12px 40px;background:linear-gradient(135deg,var(--pr),var(--prl));color:#fff;border:none;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;font-family:inherit;transition:transform .15s,box-shadow .15s}
+.bn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(16,185,129,.4)}
+.bn:active{transform:scale(.97)}
+.rb{display:none;text-align:center;padding:20px;border-radius:var(--r);margin-bottom:20px;font-size:1.1rem;font-weight:700;background:var(--card);border:2px solid var(--brd)}
+.rb.show{display:block;animation:fi .4s}
+@keyframes fi{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+.ar{margin-top:8px;padding:10px 14px;background:rgba(15,23,42,.6);border:1px solid var(--brd);border-radius:8px;font-size:.88rem;color:var(--tx2);display:none}
+.ar.show{display:block;animation:fi .3s}
+.ar strong{color:var(--prl)}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-top:24px;padding-top:20px;border-top:1px solid var(--brd)}
+.nav a{color:var(--prl);text-decoration:none;font-weight:600;font-size:.9rem;transition:opacity .2s}
+.nav a:hover{opacity:.8}
+.nav a.disabled{color:var(--tx2);pointer-events:none;opacity:.4}
+@media(max-width:600px){.ops{grid-template-columns:1fr}.qc{padding:18px}.hdr h1{font-size:1.4rem}}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <h1>📅 Day 2 — Basic Practice</h1>
+  <p>Fractions, System Substitution, Negative Inequalities, &amp; Consecutive Integer Word Problems</p>
+  <div class="tags"><span class="tag">Fractions</span><span class="tag">Substitution</span><span class="tag">Negative Inequality</span><span class="tag">Word Problems</span></div>
+</div>
+<div class="cnt">
+  <a href="basic_caculation_practice.html" class="back">← Back to Challenge Portal</a>
+
+  <!-- Q1 -->
+  <div class="qc" id="q1">
+    <span class="qn">1</span><span class="qt mc">MC</span>
+    <div class="qx">Solve for y:<br><strong>&frac13;(y - 2) + 5 = 7</strong></div>
+    <div class="ops">
+      <label><input type="radio" name="q1" value="A"><span>(A) 6</span></label>
+      <label><input type="radio" name="q1" value="B"><span>(B) 8</span></label>
+      <label><input type="radio" name="q1" value="C"><span>(C) 10</span></label>
+      <label><input type="radio" name="q1" value="D"><span>(D) 12</span></label>
+    </div>
+    <div class="ar" id="r1"><strong>Answer: (B) 8</strong><br>
+      Subtract 5 from both sides: &frac13;(y - 2) = 2.<br>
+      Multiply both sides by 3: y - 2 = 6.<br>
+      Add 2 to both sides: <strong>y = 8</strong>.</div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="qc" id="q2">
+    <span class="qn">2</span><span class="qt mc">MC</span>
+    <div class="qx">Solve the system of equations for y:<br>
+      <strong>2x + 3y = 13</strong><br>
+      <strong>x = y + 4</strong>
+    </div>
+    <div class="ops">
+      <label><input type="radio" name="q2" value="A"><span>(A) 1</span></label>
+      <label><input type="radio" name="q2" value="B"><span>(B) 2</span></label>
+      <label><input type="radio" name="q2" value="C"><span>(C) 3</span></label>
+      <label><input type="radio" name="q2" value="D"><span>(D) 5</span></label>
+    </div>
+    <div class="ar" id="r2"><strong>Answer: (A) 1</strong><br>
+      Substitute x from the second equation into the first: 2(y + 4) + 3y = 13.<br>
+      Expand: 2y + 8 + 3y = 13 → 5y + 8 = 13.<br>
+      Subtract 8: 5y = 5.<br>
+      Divide by 5: <strong>y = 1</strong>.<br>
+      (Substituting y = 1 back gives x = 5).</div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="qc" id="q3">
+    <span class="qn">3</span><span class="qt mc">MC</span>
+    <div class="qx">Solve the inequality for x:<br>
+      <strong>-2x + 7 &ge; 15</strong>
+    </div>
+    <div class="ops">
+      <label><input type="radio" name="q3" value="A"><span>(A) x &le; -4</span></label>
+      <label><input type="radio" name="q3" value="B"><span>(B) x &ge; -4</span></label>
+      <label><input type="radio" name="q3" value="C"><span>(C) x &le; 4</span></label>
+      <label><input type="radio" name="q3" value="D"><span>(D) x &ge; 4</span></label>
+    </div>
+    <div class="ar" id="r3"><strong>Answer: (A) x &le; -4</strong><br>
+      Subtract 7 from both sides: -2x &ge; 8.<br>
+      Divide both sides by -2 and <strong>reverse the inequality sign</strong> (since dividing by a negative): <strong>x &le; -4</strong>.</div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="qc" id="q4">
+    <span class="qn">4</span><span class="qt mc">MC</span>
+    <div class="qx">The sum of three consecutive integers is 72. What is the largest of these three integers?</div>
+    <div class="ops">
+      <label><input type="radio" name="q4" value="A"><span>(A) 23</span></label>
+      <label><input type="radio" name="q4" value="B"><span>(B) 24</span></label>
+      <label><input type="radio" name="q4" value="C"><span>(C) 25</span></label>
+      <label><input type="radio" name="q4" value="D"><span>(D) 26</span></label>
+    </div>
+    <div class="ar" id="r4"><strong>Answer: (C) 25</strong><br>
+      Let the three consecutive integers be n, n+1, and n+2.<br>
+      Their sum is: n + (n+1) + (n+2) = 72 → 3n + 3 = 72.<br>
+      Subtract 3: 3n = 69 → n = 23.<br>
+      The integers are 23, 24, and 25. The largest is <strong>25</strong>.</div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="qc" id="q5">
+    <span class="qn">5</span><span class="qt fr">Free Response</span>
+    <div class="qx">A school theater sold adult tickets for $12 each and student tickets for $8 each. If a total of 150 tickets were sold and the total revenue collected was $1,520, how many adult tickets were sold?</div>
+    <div class="aa"><label for="a5">Your answer:</label><input class="ai" id="a5" type="text" placeholder="Enter number of adult tickets"></div>
+    <div class="ar" id="r5"><strong>Answer: 80</strong><br>
+      Let A = adult tickets, S = student tickets.<br>
+      A + S = 150 → S = 150 - A.<br>
+      12A + 8S = 1,520.<br>
+      Substitute S: 12A + 8(150 - A) = 1,520 → 12A + 1,200 - 8A = 1,520.<br>
+      Combine terms: 4A + 1,200 = 1,520 → 4A = 320 → <strong>A = 80</strong>.</div>
+  </div>
+
+  <div class="br">
+    <button class="bn" onclick="check()">📝 Check Answers</button>
+    <button class="bn" style="margin-left:10px;background:linear-gradient(135deg,#10b981,#059669)" onclick="reset()">🔄 Start Over</button>
+  </div>
+  <div class="rb" id="rb"></div>
+
+  <div class="nav">
+    <a href="basic_day1.html">← Previous Day</a>
+    <a href="basic_day3.html">Next Day →</a>
+  </div>
+</div>
+
+<script>
+const answers={q1:'B',q2:'A',q3:'A',q4:'C'};
+function check(){
+  for(let i=1;i<=5;i++){const e=document.getElementById('r'+i);if(e)e.classList.add('show');}
+  let c=0;
+  for(const[q,a]of Object.entries(answers)){
+    const s=document.querySelector(`input[name="${q}"]:checked`);
+    if(s&&s.value===a){c++;s.closest('label').style.background='rgba(16,185,129,.15)';s.closest('label').style.borderColor='#10b981';}
+    else if(s){s.closest('label').style.background='rgba(239,68,68,.15)';s.closest('label').style.borderColor='#ef4444';}
+  }
+  const b=document.getElementById('rb');b.className='rb show';
+  b.innerHTML=`✅ Multiple Choice: ${c}/${Object.keys(answers).length} correct<br><small style="font-weight:400;color:var(--tx2)">Check the free-response solution below.</small>`;
+}
+function reset(){
+  document.querySelectorAll('input[type="radio"]').forEach(r=>r.checked=false);
+  document.querySelectorAll('.ai').forEach(i=>i.value='');
+  document.querySelectorAll('.ar').forEach(e=>e.classList.remove('show'));
+  document.querySelectorAll('.ops label').forEach(l=>{l.style.background='';l.style.borderColor='';});
+  document.getElementById('rb').classList.remove('show');
+}
+</script>
+</body>
+</html>
