@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math Vocabulary — 數學英文常用詞彙</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f172a;--card:#1e293b;--text:#f1f5f9;--text2:#94a3b8;--border:#334155;--radius:16px;
+--blue:#3b82f6;--green:#10b981;--purple:#a855f7;--amber:#f59e0b;--red:#ef4444;--cyan:#06b6d4}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter','Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;min-height:100vh}
+
+/* ── Header ── */
+.header{text-align:center;padding:56px 24px 48px;position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(59,130,246,.25) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 20% 30%,rgba(6,182,212,.12) 0%,transparent 50%);pointer-events:none}
+.header h1{font-size:2.4rem;font-weight:800;background:linear-gradient(135deg,#60a5fa,#22d3ee,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative}
+.header p{margin-top:8px;color:var(--text2);font-size:1.05rem;position:relative}
+
+/* ── Container ── */
+.container{max-width:1000px;margin:0 auto;padding:0 24px 80px}
+
+/* ── Search Bar ── */
+.search-wrapper{position:relative;max-width:500px;margin:0 auto 40px;z-index:10}
+.search-input{width:100%;padding:14px 20px;border-radius:12px;border:2px solid var(--border);background:var(--card);color:var(--text);font-size:1rem;outline:none;transition:border-color .25s,box-shadow .25s}
+.search-input:focus{border-color:var(--blue);box-shadow:0 0 16px rgba(59,130,246,.25)}
+
+/* ── Vocabulary Group ── */
+.vocab-group{margin-bottom:48px}
+.group-header{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:8px;border-bottom:2px solid var(--border)}
+.group-icon{font-size:1.5rem}
+.group-title{font-size:1.3rem;font-weight:700;color:var(--text)}
+
+/* ── Grid Layout ── */
+.vocab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.vocab-item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .2s,border-color .25s}
+.vocab-item:hover{transform:translateY(-2px);border-color:var(--blue)}
+.vocab-english{font-size:1.15rem;font-weight:700;color:#60a5fa;letter-spacing:.3px}
+.vocab-chinese{font-size:1rem;font-weight:700;color:#fbbf24;margin-top:2px}
+.vocab-desc{font-size:.82rem;color:var(--text2);margin-top:6px;line-height:1.6}
+
+/* ── Back Link ── */
+.back-link{display:inline-flex;align-items:center;gap:8px;color:var(--blue);text-decoration:none;font-weight:600;font-size:.95rem;margin-bottom:24px;transition:opacity .2s}
+.back-link:hover{opacity:.8}
+
+/* ── Print ── */
+@media print{
+  body{background:#fff;color:#000;font-size:11pt}
+  .header{padding:20px;background:none!important}
+  .header::before,.search-wrapper,.back-link{display:none}
+  .header h1{-webkit-text-fill-color:#333;font-size:1.6rem}
+  .header p{display:none}
+  .group-header{border-color:#ccc}
+  .vocab-item{background:#f8f8f8;border-color:#ddd;box-shadow:none;page-break-inside:avoid}
+  .vocab-english{color:#1e40af}
+  .vocab-chinese{color:#b45309}
+  .vocab-desc{color:#444}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📖 Math Vocabulary</h1>
+  <p>數學常用與進階英文詞彙英漢對照表</p>
+</div>
+
+<div class="container">
+  <a href="index.html" class="back-link">← Back to Practice Center</a>
+
+  <!-- Interactive Search -->
+  <div class="search-wrapper">
+    <input type="text" id="search-bar" class="search-input" placeholder="🔍 Search vocabulary (e.g. perpendicular, slope)..." onkeyup="searchVocab()">
+  </div>
+
+  <!-- Group 1: Algebra & Equations -->
+  <div class="vocab-group">
+    <div class="group-header">
+      <span class="group-icon">🧮</span>
+      <h3 class="group-title">Equations &amp; Algebra (方程式與代數)</h3>
+    </div>
+    <div class="vocab-grid">
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">linear equation</div>
+          <div class="vocab-chinese">一元一次方程式</div>
+        </div>
+        <div class="vocab-desc">An equation of the first degree containing a single variable (e.g., ax + b = c).</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">system of equations</div>
+          <div class="vocab-chinese">二元一次聯立方程式</div>
+        </div>
+        <div class="vocab-desc">A set of two or more equations sharing variables that are solved simultaneously. Also called simultaneous equations.</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">variable</div>
+          <div class="vocab-chinese">變數</div>
+        </div>
+        <div class="vocab-desc">A symbol (usually a letter like x, y) representing an unknown numerical value.</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">coefficient</div>
+          <div class="vocab-chinese">係數</div>
+        </div>
+        <div class="vocab-desc">A numerical multiplier multiplied by a variable (e.g., in 5x, 5 is the coefficient).</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">constant</div>
+          <div class="vocab-chinese">常數 / 常數項</div>
+        </div>
+        <div class="vocab-desc">A fixed value or number in an expression that does not change.</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">substitution method</div>
+          <div class="vocab-chinese">代入消去法</div>
+        </div>
+        <div class="vocab-desc">Solving a system by expressing one variable in terms of another and substituting it.</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">elimination method</div>
+          <div class="vocab-chinese">加減消去法</div>
+        </div>
+        <div class="vocab-desc">Solving a system by adding or subtracting equations to eliminate a variable.</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">distributive property</div>
+          <div class="vocab-chinese">分配律</div>
+        </div>
+        <div class="vocab-desc">Multiplying a single term by two or more terms inside parentheses: a(b + c) = ab + ac.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Group 2: Inequalities -->
+  <div class="vocab-group">
+    <div class="group-header">
+      <span class="group-icon">⚖️</span>
+      <h3 class="group-title">Inequalities (不等式)</h3>
+    </div>
+    <div class="vocab-grid">
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">inequality</div>
+          <div class="vocab-chinese">不等式</div>
+        </div>
+        <div class="vocab-desc">A mathematical statement comparing values using symbols like &gt;, &lt;, &ge;, or &le;.</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">compound inequality</div>
+          <div class="vocab-chinese">聯立不等式 / 雙邊不等式</div>
+        </div>
+        <div class="vocab-desc">Two inequalities joined together, such as -2 &le; x &lt; 5 or x &gt; 3 and x &lt; 8.</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">consecutive integers</div>
+          <div class="vocab-chinese">連續整數</div>
+        </div>
+        <div class="vocab-desc">Integers that follow each other in order without gaps (e.g., n, n+1, n+2).</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">consecutive odd integers</div>
+          <div class="vocab-chinese">連續奇數</div>
+        </div>
+        <div class="vocab-desc">Odd integers following each other (e.g., 3, 5, 7 or n, n+2, n+4 where n is odd).</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">solution set</div>
+          <div class="vocab-chinese">解的集合 / 解集</div>
+        </div>
+        <div class="vocab-desc">The complete range or set of all values that satisfy a given inequality.</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">satisfied</div>
+          <div class="vocab-chinese">滿足 / 使成立</div>
+        </div>
+        <div class="vocab-desc">When a value substituted into an equation or inequality makes the statement true.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Group 3: Coordinate Geometry & Lines -->
+  <div class="vocab-group">
+    <div class="group-header">
+      <span class="group-icon">📈</span>
+      <h3 class="group-title">Coordinate Geometry &amp; Lines (解析幾何與直線)</h3>
+    </div>
+    <div class="vocab-grid">
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">perpendicular</div>
+          <div class="vocab-chinese">垂直</div>
+        </div>
+        <div class="vocab-desc">Intersecting at a right angle (90&deg;). Perpendicular slopes are negative reciprocals: m&times;m' = -1.</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">parallel</div>
+          <div class="vocab-chinese">平行</div>
+        </div>
+        <div class="vocab-desc">Lines in the same plane that never intersect. Parallel lines have equal slopes: m₁ = m₂.</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">slope (gradient)</div>
+          <div class="vocab-chinese">斜率</div>
+        </div>
+        <div class="vocab-desc">A measure of the steepness of a line, defined as vertical change / horizontal change (rise over run).</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">y-intercept</div>
+          <div class="vocab-chinese">y軸截距 / y截距</div>
+        </div>
+        <div class="vocab-desc">The point where a line crosses the y-axis (where x = 0).</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">x-intercept</div>
+          <div class="vocab-chinese">x軸截距 / x截距</div>
+        </div>
+        <div class="vocab-desc">The point where a line crosses the x-axis (where y = 0).</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">slope-intercept form</div>
+          <div class="vocab-chinese">斜截式</div>
+        </div>
+        <div class="vocab-desc">The equation of a straight line in the form y = mx + b, where m is the slope and b is the y-intercept.</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">point-slope form</div>
+          <div class="vocab-chinese">點斜式</div>
+        </div>
+        <div class="vocab-desc">The equation of a line in the form y - y₁ = m(x - x₁), using a point and the slope.</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">standard form of a line</div>
+          <div class="vocab-chinese">直線一般式</div>
+        </div>
+        <div class="vocab-desc">The equation of a straight line written as Ax + By = C, where A, B, and C are integers.</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">collinear</div>
+          <div class="vocab-chinese">共線</div>
+        </div>
+        <div class="vocab-desc">Points that lie on the same straight line.</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">midpoint</div>
+          <div class="vocab-chinese">中點</div>
+        </div>
+        <div class="vocab-desc">The center point of a line segment, calculated as ((x₁+x₂)/2, (y₁+y₂)/2).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Group 4: Proportion & Variation -->
+  <div class="vocab-group">
+    <div class="group-header">
+      <span class="group-icon">🔗</span>
+      <h3 class="group-title">Proportion &amp; Variation (比例與變分)</h3>
+    </div>
+    <div class="vocab-grid">
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">ratio</div>
+          <div class="vocab-chinese">比 / 比率</div>
+        </div>
+        <div class="vocab-desc">A comparison of two quantities, often written as a fraction or with a colon (e.g., a:b).</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">proportion</div>
+          <div class="vocab-chinese">比例 / 比例式</div>
+        </div>
+        <div class="vocab-desc">An equation stating that two ratios are equal (e.g., a/b = c/d).</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">direct variation</div>
+          <div class="vocab-chinese">正比</div>
+        </div>
+        <div class="vocab-desc">A relationship where one variable is a constant multiple of another (y = kx). Also stated as "directly proportional".</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">inverse variation</div>
+          <div class="vocab-chinese">反比</div>
+        </div>
+        <div class="vocab-desc">A relationship where the product of two variables is constant (xy = k or y = k/x). Also stated as "inversely proportional".</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">joint variation</div>
+          <div class="vocab-chinese">聯合變分</div>
+        </div>
+        <div class="vocab-desc">A variation where one variable varies directly as the product of two or more other variables (y = kxz).</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">combined variation</div>
+          <div class="vocab-chinese">複合變分</div>
+        </div>
+        <div class="vocab-desc">A variation containing both direct variation and inverse variation relationships (e.g., y = kx/z).</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">constant of variation</div>
+          <div class="vocab-chinese">變分常數</div>
+        </div>
+        <div class="vocab-desc">The non-zero constant k in direct, inverse, or joint variation equations.</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">gear ratio</div>
+          <div class="vocab-chinese">齒輪比</div>
+        </div>
+        <div class="vocab-desc">The ratio of the number of teeth or rotation speeds between two meshing gears (inversely proportional).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Group 5: Word Problems & Applications -->
+  <div class="vocab-group">
+    <div class="group-header">
+      <span class="group-icon">📖</span>
+      <h3 class="group-title">Word Problems &amp; Finance (應用與商業名詞)</h3>
+    </div>
+    <div class="vocab-grid">
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">average speed</div>
+          <div class="vocab-chinese">平均速率</div>
+        </div>
+        <div class="vocab-desc">Total distance traveled divided by the total time taken (Avg = Total d / Total t).</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">upstream / downstream</div>
+          <div class="vocab-chinese">逆水 / 順水</div>
+        </div>
+        <div class="vocab-desc">Moving against the current (speed = boat - current) or with the current (speed = boat + current).</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">headwind / tailwind</div>
+          <div class="vocab-chinese">逆風 / 順風</div>
+        </div>
+        <div class="vocab-desc">Moving against the wind (speed = plane - wind) or with the wind (speed = plane + wind).</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">work rate</div>
+          <div class="vocab-chinese">工作效率</div>
+        </div>
+        <div class="vocab-desc">The amount of work done per unit of time (Rate = Work / Time).</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">mixture</div>
+          <div class="vocab-chinese">混合物 / 混合溶液</div>
+        </div>
+        <div class="vocab-desc">A combination of substances (e.g. mixing saline or acid solutions of different concentrations).</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">dilution</div>
+          <div class="vocab-chinese">稀釋</div>
+        </div>
+        <div class="vocab-desc">Reducing the concentration of a solution by adding pure water/solvent.</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">marked price (list price)</div>
+          <div class="vocab-chinese">定價 / 標價</div>
+        </div>
+        <div class="vocab-desc">The original price set on an item before discount.</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">selling price</div>
+          <div class="vocab-chinese">售價</div>
+        </div>
+        <div class="vocab-desc">The actual price at which an item is sold after discount or markup.</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">discount</div>
+          <div class="vocab-chinese">折扣</div>
+        </div>
+        <div class="vocab-desc">A reduction in price. (e.g., 20% discount is equivalent to paying 80% of the price).</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">markup</div>
+          <div class="vocab-chinese">利潤加成 / 漲價</div>
+        </div>
+        <div class="vocab-desc">The amount added to the cost price of goods to cover overhead and profit (e.g. markup of 20% on cost).</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">break-even point</div>
+          <div class="vocab-chinese">損益兩平點</div>
+        </div>
+        <div class="vocab-desc">The production/sales level where total cost equals total revenue, resulting in zero net profit/loss.</div>
+      </div>
+      <div class="vocab-item">
+        <div>
+          <div class="vocab-english">simple interest</div>
+          <div class="vocab-chinese">單利</div>
+        </div>
+        <div class="vocab-desc">Interest calculated only on the initial principal amount invested (Interest = Principal &times; Rate &times; Time).</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function searchVocab() {
+  const query = document.getElementById('search-bar').value.toLowerCase();
+  const items = document.querySelectorAll('.vocab-item');
+  items.forEach(item => {
+    const text = item.textContent.toLowerCase();
+    if (text.includes(query)) {
+      item.style.display = 'flex';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+
+  const groups = document.querySelectorAll('.vocab-group');
+  groups.forEach(group => {
+    const totalItems = group.querySelectorAll('.vocab-item');
+    let hasVisible = false;
+    totalItems.forEach(item => {
+      if (item.style.display !== 'none') {
+        hasVisible = true;
+      }
+    });
+
+    if (hasVisible) {
+      group.style.display = 'block';
+    } else {
+      group.style.display = 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>
